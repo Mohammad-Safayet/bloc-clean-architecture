@@ -30,7 +30,7 @@ abstract class AppTextStyles {
   );
 
 
-  static const titleBig = TextStyle(
+  static const titleLarge = TextStyle(
     fontSize: AppValues.fontSize_20,
     letterSpacing: 0.5,
     fontWeight: FontWeight.w700,
