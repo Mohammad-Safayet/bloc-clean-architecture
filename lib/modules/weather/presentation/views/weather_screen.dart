@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:weather_app/core/constants/app_values.dart';
-import 'package:weather_app/modules/weather/presentation/widgets/astronomy_card.dart';
+import 'package:weather_app/modules/weather/presentation/widgets/astronomy_info.dart';
+import 'package:weather_app/modules/weather/presentation/widgets/view_details_button.dart';
 import 'package:weather_app/modules/weather/presentation/widgets/weather_display.dart';
 import 'package:weather_app/modules/weather/presentation/widgets/weather_info.dart';
 import 'package:weather_app/modules/weather/presentation/widgets/weather_screen_bar.dart';
@@ -51,32 +52,12 @@ class WeatherScreenView extends StatelessWidget {
             // Weather Info Cards
             const WeatherInfoWidget(),
 
-            GridView.count(
-              primary: false,
-              shrinkWrap: true,
-              childAspectRatio: 1.25,
-              crossAxisSpacing: 25,
-              mainAxisSpacing: 15,
-              crossAxisCount: 2,
-              padding: const EdgeInsets.only(bottom: AppValues.padding,),
-              children: [
-                AstronomyCardWidget(
-                  imgLink: "assets/images/sunrise.png",
-                  time: "05:60 AM",
-                ),
-                AstronomyCardWidget(
-                  imgLink: "assets/images/sunset.png",
-                  time: "06:00 PM",
-                ),
-                AstronomyCardWidget(
-                  imgLink: "assets/images/moonrise.png",
-                  time: "06:60 PM",
-                ),
-                AstronomyCardWidget(
-                  imgLink: "assets/images/moonset.png",
-                  time: "09:60 PM",
-                ),
-              ],
+            // View more Button
+            ViewDetailsButtonWidget(),
+
+            // Astronomy information
+            const AstronomyInfoWidget(
+              title: "title",
             ),
           ],
         ),
