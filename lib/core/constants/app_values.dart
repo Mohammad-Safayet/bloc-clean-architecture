@@ -97,11 +97,10 @@ abstract class AppValues {
   static const int defaultDebounceTimeInMilliSeconds = 1000;
   static const int defaultThrottleTimeInMilliSeconds = 500;
 
-  // Container size
-  static const double navDrawerItemContainer = 56.0;
 
   // NavigationBar height
   static const double navBarHeight = 56.0;
+  static const double navDrawerItemContainer = 56.0;
 
   // Height
   static const double height_28 = 2.8;
