@@ -16,7 +16,7 @@ class WeatherTitleWidget extends StatelessWidget {
         children: [
           const Text(
             "Saturday",
-            style: AppTextStyles.titleBig,
+            style: AppTextStyles.titleLarge,
             textAlign: TextAlign.center,
           ),
           SizedBox(
@@ -33,7 +33,7 @@ class WeatherTitleWidget extends StatelessWidget {
           ),
           const Text(
             "10 Fab",
-            style: AppTextStyles.titleBig,
+            style: AppTextStyles.titleLarge,
             textAlign: TextAlign.center,
           ),
         ],
