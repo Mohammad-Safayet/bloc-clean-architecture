@@ -11,7 +11,9 @@ class AstronomyInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: AppValues.padding,),
+      padding: const EdgeInsets.symmetric(
+        vertical: AppValues.padding,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -29,10 +31,10 @@ class AstronomyInfoWidget extends StatelessWidget {
           GridView.count(
             primary: false,
             shrinkWrap: true,
-            crossAxisSpacing: 25,
-            mainAxisSpacing: 15,
-            crossAxisCount: 2,
-            childAspectRatio: 1.15,
+            crossAxisCount: AppValues.gridChildCount_2,
+            crossAxisSpacing: AppValues.axisSpacing_25,
+            mainAxisSpacing: AppValues.axisSpacing_15,
+            childAspectRatio: AppValues.gridChildAspectRatio_1_15,
             children: [
               AstronomyCardWidget(
                 imgLink: "assets/images/sunrise.png",
