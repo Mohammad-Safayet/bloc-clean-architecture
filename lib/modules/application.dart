@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/core/config/config.dart';
 
 import 'package:weather_app/modules/home/presentation/views/home_screen.dart';
 
@@ -7,8 +8,9 @@ class WeatherApplication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _config = BuildConfig.instance.envConfig;
     return MaterialApp(
-      title: 'Weather App Demo',
+      title: _config.appName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
