@@ -82,6 +82,7 @@ abstract class AppValues {
   static const double icon_10 = 10;
   static const double icon_28 = 28;
   static const double icon_38 = 38;
+  static const double icon_42 = 42;
   static const double icon_76 = 76;
 
   static const double customAppBarSize = 144.0;
@@ -121,4 +122,17 @@ abstract class AppValues {
   static const double fontSize_16 = 16;
   static const double fontSize_14 = 14;
   static const double fontSize_12 = 12;
+
+  // Gridview
+  static const int gridChildCount_2 = 2;
+  static const int gridChildCount_3 = 3;
+  static const double gridChildAspectRatio_1_25 = 1.25;
+  static const double gridChildAspectRatio_1_15 = 1.15;
+  static const double axisSpacing_5 = 5;
+  static const double axisSpacing_10 = 10;
+  static const double axisSpacing_15 = 15;
+  static const double axisSpacing_20 = 20;
+  static const double axisSpacing_25 = 25;
+  static const double axisSpacing_30 = 30;
+  static const double axisSpacing_35 = 35;
 }
