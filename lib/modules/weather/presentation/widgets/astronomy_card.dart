@@ -32,9 +32,6 @@ class AstronomyCardWidget extends StatelessWidget {
               height: AppValues.icon_38,
               width: AppValues.icon_38,
             ),
-            SizedBox(
-              height: AppValues.space_10,
-            ),
             Text(
               time,
               style: AppTextStyles.bodyLarge,
