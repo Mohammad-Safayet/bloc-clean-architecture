@@ -7,33 +7,45 @@ class WeatherInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      primary: false,
-      shrinkWrap: true,
-      crossAxisCount: AppValues.gridChildCount_3,
-      crossAxisSpacing: AppValues.axisSpacing_5,
-      padding: const EdgeInsets.only(
-        bottom: AppValues.padding_6,
+    return Container(
+      margin: const EdgeInsets.only(
+        bottom: AppValues.margin_6,
       ),
-      children: [
-        WeatherInfoTileWidget(
-          bgColor: Theme.of(context).colorScheme.surfaceVariant,
-          title: "Humidity",
-          value: "35",
-          unit: "%",
+      decoration: BoxDecoration(
+        gradient: RadialGradient(
+          colors: [
+            Theme.of(context).colorScheme.outline.withOpacity(0.4),
+            Theme.of(context).colorScheme.surface,
+          ],
+          radius: 0.75,
+          focal: Alignment.center,
         ),
-        WeatherInfoTileWidget(
-          bgColor: Theme.of(context).colorScheme.surfaceVariant,
-          title: "UV Index",
-          value: "35",
-        ),
-        WeatherInfoTileWidget(
-          bgColor: Theme.of(context).colorScheme.surfaceVariant,
-          title: "Wind",
-          value: "6",
-          unit: "kph",
-        ),
-      ],
+      ),
+      child: GridView.count(
+        primary: false,
+        shrinkWrap: true,
+        crossAxisCount: AppValues.gridChildCount_3,
+        crossAxisSpacing: AppValues.axisSpacing_2,
+        children: [
+          WeatherInfoTileWidget(
+            bgColor: Theme.of(context).colorScheme.surface,
+            title: "Humidity",
+            value: "35",
+            unit: "%",
+          ),
+          WeatherInfoTileWidget(
+            bgColor: Theme.of(context).colorScheme.surface,
+            title: "UV Index",
+            value: "35",
+          ),
+          WeatherInfoTileWidget(
+            bgColor: Theme.of(context).colorScheme.surface,
+            title: "Wind",
+            value: "6",
+            unit: "kph",
+          ),
+        ],
+      ),
     );
   }
 }
