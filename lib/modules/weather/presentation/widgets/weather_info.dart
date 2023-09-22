@@ -7,44 +7,33 @@ class WeatherInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GridView.count(
+      primary: false,
+      shrinkWrap: true,
+      crossAxisCount: AppValues.gridChildCount_3,
+      crossAxisSpacing: AppValues.axisSpacing_5,
       padding: const EdgeInsets.only(
-        bottom: AppValues.padding,
+        bottom: AppValues.padding_6,
       ),
-      height: AppValues.container_100,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          WeatherInfoTileWidget(
-            bgColor: Theme.of(context).colorScheme.surface,
-            title: "Wind Speed",
-            value: "15.6",
-            unit: "kph",
-          ),
-          VerticalDivider(
-            width: 2,
-            thickness: 1,
-            color: Colors.grey.shade300,
-          ),
-          WeatherInfoTileWidget(
-            bgColor: Theme.of(context).colorScheme.surface,
-            title: "UV",
-            value: "15",
-          ),
-          VerticalDivider(
-            width: 2,
-            thickness: 1,
-            color: Colors.grey.shade300,
-          ),
-          WeatherInfoTileWidget(
-            bgColor: Theme.of(context).colorScheme.surface,
-            title: "Humidity",
-            value: "35",
-            unit: "%",
-          ),
-        ],
-      ),
+      children: [
+        WeatherInfoTileWidget(
+          bgColor: Theme.of(context).colorScheme.surfaceVariant,
+          title: "Humidity",
+          value: "35",
+          unit: "%",
+        ),
+        WeatherInfoTileWidget(
+          bgColor: Theme.of(context).colorScheme.surfaceVariant,
+          title: "UV Index",
+          value: "35",
+        ),
+        WeatherInfoTileWidget(
+          bgColor: Theme.of(context).colorScheme.surfaceVariant,
+          title: "Wind",
+          value: "6",
+          unit: "kph",
+        ),
+      ],
     );
   }
 }

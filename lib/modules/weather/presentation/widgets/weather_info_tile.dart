@@ -22,11 +22,9 @@ class WeatherInfoTileWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: bgColor,
       ),
-      height: AppValues.container_80,
-      width: AppValues.container_100,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Text(
             title,
@@ -36,8 +34,8 @@ class WeatherInfoTileWidget extends StatelessWidget {
           ),
           SizedBox(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.baseline,
-              mainAxisSize: MainAxisSize.min,
               textBaseline: TextBaseline.alphabetic,
               children: [
                 Align(
