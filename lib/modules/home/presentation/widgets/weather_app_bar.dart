@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:weather_app/modules/home/presentation/widgets/app_bar_icon_button.dart';
+import 'package:weather_app/modules/home/presentation/widgets/app_bar_icon_button.dart';
+import 'package:weather_app/modules/home/presentation/widgets/app_bar_icon_button.dart';
+import 'package:weather_app/modules/shared/widgets/application_bar.dart';
 
 class WeatherAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
@@ -12,39 +16,20 @@ class WeatherAppBarWidget extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Theme.of(context).colorScheme.surfaceVariant,
-      elevation: 0.0,
-      scrolledUnderElevation: 0.0,
-      leading: IconButton(
+    return ApplicationBar(
+      leadingIcon: AppBarIconButtonWidget(
         onPressed: () {},
-        icon: FaIcon(
-          FontAwesomeIcons.arrowRotateRight,
-          color: Theme.of(context).colorScheme.onSurfaceVariant,
-          size: 18.0,
-        ),
+        icon: FontAwesomeIcons.arrowRotateRight,
       ),
-      title: Text(
-        appTitle,
-        style: Theme.of(context).textTheme.titleMedium,
-      ),
-      centerTitle: true,
+      appBarTitleText: appTitle,
       actions: [
-        IconButton(
+        AppBarIconButtonWidget(
           onPressed: () {},
-          icon: FaIcon(
-            FontAwesomeIcons.magnifyingGlass,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-            size: 18.0,
-          ),
+          icon: FontAwesomeIcons.magnifyingGlass,
         ),
-        IconButton(
+        AppBarIconButtonWidget(
           onPressed: () {},
-          icon: FaIcon(
-            FontAwesomeIcons.ellipsisVertical,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-            size: 18.0,
-          ),
+          icon: FontAwesomeIcons.ellipsisVertical,
         ),
       ],
     );
