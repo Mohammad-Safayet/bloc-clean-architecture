@@ -1,12 +1,9 @@
-import 'package:logger/logger.dart';
-import 'package:weather_app/core/network/network_provider.dart';
 import 'package:weather_app/modules/shared/base/base_remote_datasource.dart';
 import 'package:weather_app/modules/weather/infra/datasources/remote/weather_remote_datasource.dart';
 import 'package:weather_app/modules/weather/infra/models/astronomy_model.dart';
 
 class WeatherRemoteDataSourceImpl extends BaseRemoteDataSource
     implements WeatherRemoteDataSource {
-
   @override
   Future<AstronomyModel> getAstronomyData() async {
     final endpoint =
@@ -14,11 +11,11 @@ class WeatherRemoteDataSourceImpl extends BaseRemoteDataSource
     final api = dioClient.get(endpoint);
 
     try {
-    final response = await callApiWithErrorParser(api);
-    Logger().d(response.data);
+      final response = await callApiWithErrorParser(api);
+      final data = response.data;
 
-    return AstronomyModel.fromJson(response.data);
-    } catch(e) {
+      return AstronomyModel.fromJson(data);
+    } catch (e) {
       rethrow;
     }
   }
