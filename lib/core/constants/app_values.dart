@@ -138,4 +138,7 @@ abstract class AppValues {
   static const double axisSpacing_25 = 25;
   static const double axisSpacing_30 = 30;
   static const double axisSpacing_35 = 35;
+
+  // DateTime Format pattern
+  static const yyyyMMddHHmm = "yyyy-MM-dd HH:mm";
 }
