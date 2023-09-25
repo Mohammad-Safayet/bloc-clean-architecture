@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/core/constants/app_values.dart';
-import 'package:weather_app/modules/weather/presentation/widgets/weather_info_tile.dart';
+import 'package:weather_app/core/constants/ap'
+    'p_values.dart';
+
 
 class WeatherInfoWidget extends StatelessWidget {
   const WeatherInfoWidget({Key? key}) : super(key: key);
