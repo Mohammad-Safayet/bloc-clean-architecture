@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 
 import 'package:weather_app/core/constants/app_values.dart';
-import 'package:weather_app/modules/weather/presentation/widgets/astronomy_info.dart';
-import 'package:weather_app/modules/weather/presentation/widgets/view_details_button.dart';
-import 'package:weather_app/modules/weather/presentation/widgets/weather_display.dart';
-import 'package:weather_app/modules/weather/presentation/widgets/weather_info.dart';
-import 'package:weather_app/modules/weather/presentation/widgets/weather_screen_bar.dart';
-import 'package:weather_app/modules/weather/presentation/widgets/weather_title.dart';
+import 'package:weather_app/modules/weather/infra/datasources/remote/weather_remote_datasource_impl.dart';
+import 'package:weather_app/modules/weather/presentation/views/astronomy_view.dart';
+import 'package:weather_app/modules/weather/presentation/views/current_weather.dart';
 
-class WeatherScreenView extends StatelessWidget {
+class WeatherScreenView extends StatefulWidget {
   const WeatherScreenView({Key? key}) : super(key: key);
+
+  @override
+  State<WeatherScreenView> createState() => _WeatherScreenViewState();
+}
+
+class _WeatherScreenViewState extends State<WeatherScreenView> {
+  @override
+  void initState() {
+    super.initState();
+
+    WeatherRemoteDataSourceImpl().getAstronomyData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +35,10 @@ class WeatherScreenView extends StatelessWidget {
         color: Theme.of(context).colorScheme.surface,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(
-            AppValues.radiusLarge,
+            AppValues.radiusXLarge,
           ),
           topRight: Radius.circular(
-            AppValues.radiusLarge,
+            AppValues.radiusXLarge,
           ),
         ),
       ),
@@ -37,28 +46,11 @@ class WeatherScreenView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: AppValues.space_16,
-            ),
-            // Location Title Bar
-            const WeatherScreenBarWidget(),
-
-            // Datetime of the day
-            const WeatherTitleWidget(),
-
-            // Weather DisPlay
-            const WeatherDisplayWidget(),
-
-            // Weather Info Cards
-            const WeatherInfoWidget(),
-
-            // View more Button
-            ViewDetailsButtonWidget(),
+            // Current Weather info
+            CurrentWeatherView(),
 
             // Astronomy information
-            const AstronomyInfoWidget(
-              title: "title",
-            ),
+            AstronomyView(),
           ],
         ),
       ),
