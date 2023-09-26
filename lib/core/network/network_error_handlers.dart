@@ -11,7 +11,7 @@ Exception handleError(String error) {
   return ApplicationException(message: error);
 }
 
-Exception handleDioError(DioException dioError) {
+Exception handleNetworkError(DioException dioError) {
   switch (dioError.type) {
     case DioExceptionType.cancel:
       return ApplicationException(
