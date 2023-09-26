@@ -8,6 +8,8 @@ class FailureEntity with _$FailureEntity {
 
   const factory FailureEntity.applicationFailure() = ApplicationFailure;
 
+  const factory FailureEntity.apiFailure() = ApiFailure;
+
   const factory FailureEntity.jsonFormatFailure() = JsonFormatFailure;
 
   const factory FailureEntity.networkingFailure() = NetworkingFailure;
