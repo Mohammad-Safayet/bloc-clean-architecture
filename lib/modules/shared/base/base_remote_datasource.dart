@@ -25,7 +25,7 @@ abstract class BaseRemoteDataSource {
     } on DioException catch (dioError) {
       Exception exception = handleNetworkError(dioError);
       logger.e(
-        "Throwing error from repository: >>>>>>> $exception : ${(exception as BaseException).message}",
+        "Throwing error from datasource: >>>>>>> $exception : ${(exception as BaseException).message}",
       );
       throw exception;
     } catch (error) {
