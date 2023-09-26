@@ -28,7 +28,7 @@ extension ErrorObjectExtension on ErrorObject {
       },
       notFoundFailure: () {
         String status = "";
-        if(exception is ApiException) status = exception.status;
+        if (exception is ApiException) status = exception.status;
 
         return ErrorObject(
           title: "${HttpStatus.notFound}: $status",
@@ -37,7 +37,7 @@ extension ErrorObjectExtension on ErrorObject {
       },
       serviceUnavailableFailure: () {
         String status = "";
-        if(exception is ApiException) status = exception.status;
+        if (exception is ApiException) status = exception.status;
 
         return ErrorObject(
           title: "${HttpStatus.serviceUnavailable}: $status",
@@ -52,10 +52,19 @@ extension ErrorObjectExtension on ErrorObject {
       },
       unauthorizedFailure: () {
         String status = "";
-        if(exception is ApiException) status = exception.status;
-        
+        if (exception is ApiException) status = exception.status;
+
         return ErrorObject(
           title: "${HttpStatus.unauthorized}: $status",
+          message: exception.message,
+        );
+      },
+      apiFailure: () {
+        String status = "";
+        if (exception is ApiException) status = exception.status;
+
+        return ErrorObject(
+          title: "${(exception as ApiException).httpCode}: $status",
           message: exception.message,
         );
       },
