@@ -36,7 +36,7 @@ Exception handleNetworkError(DioException dioError) {
         message: "Request was cancelled due to invalid certificate",
       );
     case DioExceptionType.badResponse:
-      return _parseDioErrorResponse(dioError);
+      return _parseNetworkErrorResponse(dioError);
     default:
       return ApplicationException(
         message: "Unknown error occurred",
@@ -44,7 +44,7 @@ Exception handleNetworkError(DioException dioError) {
   }
 }
 
-Exception _parseDioErrorResponse(DioException dioError) {
+Exception _parseNetworkErrorResponse(DioException dioError) {
   final logger = BuildConfig.instance.envConfig.logger;
 
   int statusCode = dioError.response?.statusCode ?? -1;
