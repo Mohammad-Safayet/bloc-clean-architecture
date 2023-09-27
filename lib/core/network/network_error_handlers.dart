@@ -4,13 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:weather_app/core/config/build_config.dart';
 import 'package:weather_app/core/utils/error_handling/error_handling.dart';
 
-Exception handleError(String error) {
-  final logger = BuildConfig.instance.envConfig.logger;
-  logger.e("Generic exception: $error");
-
-  return ApplicationException(message: error);
-}
-
 Exception handleNetworkError(DioException dioError) {
   switch (dioError.type) {
     case DioExceptionType.cancel:
