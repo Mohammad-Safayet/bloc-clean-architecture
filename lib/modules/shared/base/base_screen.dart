@@ -57,7 +57,7 @@ abstract class BaseScreen extends StatelessWidget {
   }
 
   Color pageBackgroundColor(BuildContext context) {
-    return Theme.of(context).colorScheme.background;
+    return Theme.of(context).colorScheme.surfaceVariant;
   }
 
   Widget? floatingActionButton(BuildContext context) {
