@@ -6,6 +6,12 @@ abstract class BaseException implements Exception {
   BaseException({required this.message});
 }
 
+class LocationPermissionDeniedException extends BaseException {
+  LocationPermissionDeniedException({
+    required String message,
+  }) : super(message: message);
+}
+
 class ApiException extends BaseException {
   final int httpCode;
   final String status;
