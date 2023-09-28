@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:weather_app/core/utils/error_handling/failure_entity.dart';
 import 'package:weather_app/modules/home/home.dart';
-import 'package:weather_app/modules/home/presentation/views/home_screen.dart';
 import 'package:weather_app/modules/shared/views/error_screen.dart';
 
 part 'app_routes.dart';

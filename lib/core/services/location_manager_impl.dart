@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weather_app/core/services/location_manager.dart';
 import 'package:weather_app/core/utils/error_handling/error_handling.dart';

@@ -1,5 +1,4 @@
 import 'package:intl/intl.dart';
-import 'package:logger/logger.dart';
 
 import 'package:weather_app/modules/weather/domain/entities/astro.dart';
 import 'package:weather_app/modules/weather/infra/models/astro_model.dart';
