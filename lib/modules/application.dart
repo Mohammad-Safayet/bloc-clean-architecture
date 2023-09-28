@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/core/config/config.dart';
 
-import 'package:weather_app/modules/home/presentation/views/home_screen.dart';
+import 'package:weather_app/core/config/config.dart';
+import 'package:weather_app/core/routes/app_pages.dart';
 
 class WeatherApplication extends StatelessWidget {
   const WeatherApplication({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final _config = BuildConfig.instance.envConfig;
-    return MaterialApp(
-      title: _config.appName,
+    final config = BuildConfig.instance.envConfig;
+    final env = BuildConfig.instance.environment;
+
+    return MaterialApp.router(
+      title: config.appName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         fontFamily: 'Montserrat',
       ),
-      home: HomeScreenView(),
+      routerConfig: AppPages.routes,
+      debugShowCheckedModeBanner: env == Environment.DEVELOPMENT,
     );
   }
 }
