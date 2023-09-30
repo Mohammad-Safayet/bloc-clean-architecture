@@ -1,37 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/core/constants/app_values.dart';
 
-class Loading extends StatelessWidget {
-  final Widget child;
+class LoadingWidget extends StatelessWidget {
   final Color? bgColor;
-  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry padding;
   final double borderRadius;
 
-  const Loading({
+  const LoadingWidget({
     Key? key,
-    required this.child,
     this.bgColor,
-    this.padding,
+    this.padding = const EdgeInsets.all(AppValues.padding),
     this.borderRadius = 12.0,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: padding,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius),
-        boxShadow: [
-          BoxShadow(
-            color: Theme.of(context).shadowColor.withOpacity(0.7),
-            spreadRadius: 3,
-            blurRadius: 8,
-            offset: const Offset(0, 3),
-          ),
-        ],
-        color: bgColor ?? Theme.of(context).colorScheme.onPrimary,
-      ),
-      child: CircularProgressIndicator(
-        color: Theme.of(context).colorScheme.primary,
+    return Center(
+      child: Container(
+        padding: padding,
+        height: AppValues.container_100,
+        width: AppValues.container_100,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(borderRadius),
+          boxShadow: [
+            BoxShadow(
+              color: Theme.of(context).shadowColor.withOpacity(0.4),
+              spreadRadius: 3,
+              blurRadius: 8,
+              offset: const Offset(0, 3),
+            ),
+          ],
+          color: bgColor ??
+              Theme.of(context).colorScheme.primaryContainer.withOpacity(
+                    0.8,
+                  ),
+        ),
+        child: CircularProgressIndicator(
+          color: Theme.of(context).colorScheme.primary,
+        ),
       ),
     );
   }
