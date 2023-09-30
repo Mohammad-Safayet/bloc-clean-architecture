@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:weather_app/core/services/location_manager_impl.dart';
 import 'package:weather_app/core/utils/error_handling/failure_entity.dart';
 import 'package:weather_app/modules/home/home.dart';
+import 'package:weather_app/modules/home/presentation/bloc/location_bloc.dart';
 import 'package:weather_app/modules/shared/views/error_screen.dart';
 
 part 'app_routes.dart';
@@ -31,7 +35,12 @@ abstract class AppPages {
     routes: [
       GoRoute(
         path: Routes.HOME,
-        builder: (context, state) => const HomePage(),
+        builder: (context, state) {
+          return BlocProvider(
+            create: (context) => LocationBloc(LocationManagerImpl()),
+            child: HomePage(),
+          );
+        },
       ),
       GoRoute(
           path: Routes.ERROR,
