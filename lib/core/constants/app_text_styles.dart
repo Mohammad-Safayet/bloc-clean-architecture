@@ -29,7 +29,6 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.w400,
   );
 
-
   static const titleLarge = TextStyle(
     fontSize: AppValues.fontSize_20,
     letterSpacing: 0.5,
@@ -89,4 +88,25 @@ abstract class AppTextStyles {
     letterSpacing: 0.1,
     fontWeight: FontWeight.w500,
   );
+
+  static const errorTitle = TextStyle(
+    fontSize: AppValues.fontSize_20,
+    letterSpacing: 0.15,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
+
+  static const errorDesc = TextStyle(
+    fontSize: AppValues.fontSize_12,
+    letterSpacing: 0.25,
+    fontWeight: FontWeight.w400,
+    color: Colors.white,
+  );
+
+  static const errorButton = TextStyle(
+    fontSize: AppValues.fontSize_12,
+    letterSpacing: 0.25,
+    fontWeight: FontWeight.w600,
+  );
+
 }
