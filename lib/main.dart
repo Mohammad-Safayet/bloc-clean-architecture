@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:weather_app/core/services/location_manager.dart';
+import 'package:weather_app/core/services/location_manager_impl.dart';
+import 'package:weather_app/core/utils/di/di.dart';
 
 import 'package:weather_app/modules/application.dart';
+import 'package:weather_app/modules/shared/base/base_remote_datasource.dart';
+import 'package:weather_app/modules/shared/base/base_usecase.dart';
+import 'package:weather_app/modules/weather/domain/repositories/weather_repo_impl.dart';
+import 'package:weather_app/modules/weather/domain/usecases/get_astronomy_data_usecase.dart';
+import 'package:weather_app/modules/weather/infra/datasources/remote/weather_remote_datasource.dart';
+import 'package:weather_app/modules/weather/infra/datasources/remote/weather_remote_datasource_impl.dart';
+import 'package:weather_app/modules/weather/infra/repositories/weather_repo.dart';
 
 import 'core/config/config.dart';
 
@@ -22,6 +32,13 @@ void main() async {
   BuildConfig.instantiate(
     type: Environment.DEVELOPMENT,
     config: devConfig,
+  );
+
+  final di = DependencyInjection.instance;
+
+  di.register<LocationManager>(
+    LocationManagerImpl(),
+    DiType.SINGLETON,
   );
 
   runApp(
