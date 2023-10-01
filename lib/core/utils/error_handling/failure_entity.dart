@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:weather_app/core/utils/error_handling/error_handling.dart';
 
 part 'failure_entity.freezed.dart';
 
@@ -12,6 +13,7 @@ class FailureEntity with _$FailureEntity {
   }) = ApplicationFailure;
 
   const factory FailureEntity.locationPermissionFailure({
+    required BaseException exception,
     required String title,
     required String message,
   }) = LocationPermissionFailure;
