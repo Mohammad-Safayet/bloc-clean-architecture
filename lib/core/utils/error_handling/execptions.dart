@@ -12,6 +12,12 @@ class LocationPermissionDeniedException extends BaseException {
   }) : super(message: message);
 }
 
+class LocationPermissionDeniedForeverException extends BaseException {
+  LocationPermissionDeniedForeverException({
+    required String message,
+  }) : super(message: message);
+}
+
 class ApiException extends BaseException {
   final int httpCode;
   final String status;
