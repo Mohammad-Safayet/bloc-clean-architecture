@@ -1,0 +1,38 @@
+import 'package:get_it/get_it.dart';
+
+enum DiType {
+  SINGLETON,
+  LAZY_SINGLETON,
+  FACTORY,
+}
+
+class DependencyInjection {
+  final GetIt getIt = GetIt.instance;
+
+  static final DependencyInjection _instance = DependencyInjection._internal();
+
+  static DependencyInjection get instance => _instance;
+
+  DependencyInjection._internal();
+
+  void register<T extends Object>(
+    T instance,
+    DiType type,
+  ) {
+    switch (type) {
+      case DiType.SINGLETON:
+        getIt.registerSingleton(instance);
+        break;
+      case DiType.LAZY_SINGLETON:
+        getIt.registerLazySingleton(() => instance);
+        break;
+      case DiType.FACTORY:
+        getIt.registerFactory(instance as FactoryFunc<Object>);
+        break;
+    }
+  }
+
+  T getInstance<T extends Object>() {
+    return getIt.get<T>();
+  }
+}
