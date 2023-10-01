@@ -4,9 +4,13 @@ import 'package:weather_app/core/utils/error_handling/error_handling.dart';
 
 class LocationManagerImpl extends LocationManager {
   @override
-  Future getCurrentLocation() async {
+  Future<Position> getCurrentLocation() async {
     try {
+      final location = await Geolocator.getCurrentPosition();
 
+      logger.d(location);
+
+      return location;
     } catch (error) {
       logger.e("Generic error: >>>>>>> $error");
 
@@ -35,9 +39,9 @@ class LocationManagerImpl extends LocationManager {
 
       if (permission == LocationPermission.deniedForever) {
         // Permissions are denied forever, handle appropriately.
-        throw LocationPermissionDeniedException(
+        throw LocationPermissionDeniedForeverException(
           message:
-              "The core functionality will not be available it the location access is denied.",
+              "The core functionality will not be available if the location access is denied.",
         );
       }
 
