@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:weather_app/core/constants/app_text_styles.dart';
+import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/core/routes/app_pages.dart';
 import 'package:weather_app/core/utils/error_handling/failure_entity.dart';
 import 'package:weather_app/modules/shared/base/base_screen.dart';
+import 'package:weather_app/modules/shared/widgets/error_button.dart';
 
 class ErrorScreen extends BaseScreen {
   ErrorScreen({
     Key? key,
     required this.failureEntity,
+    required this.actions,
   }) : super(key: key);
 
   final FailureEntity? failureEntity;
+  final List<ErrorButtonWidget> actions;
 
   @override
   Widget body(BuildContext context) {
     return Container(
-      color: Theme.of(context).colorScheme.errorContainer,
+      color: Theme.of(context).colorScheme.error,
       width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.all(
+        AppValues.padding,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,41 +34,15 @@ class ErrorScreen extends BaseScreen {
             failureEntity != null
                 ? failureEntity!.title
                 : "Unexpected error occurred",
-            style: TextStyle(
-              fontSize: 24.0,
-              color: Theme.of(context).colorScheme.error,
-            ),
+            style: AppTextStyles.errorTitle,
           ),
           Text(
             failureEntity != null
                 ? failureEntity!.message
                 : "The route don't exists",
-            style: TextStyle(
-              fontSize: 20.0,
-              color: Theme.of(context).colorScheme.error,
-            ),
+            style: AppTextStyles.errorDesc,
           ),
-          TextButton.icon(
-            style: ButtonStyle(
-              backgroundColor: MaterialStatePropertyAll(
-                Theme.of(context).colorScheme.onErrorContainer,
-              ),
-            ),
-            onPressed: () {
-              context.go(Routes.HOME);
-            },
-            icon: Icon(
-              Icons.exit_to_app,
-              color: Theme.of(context).colorScheme.onError,
-            ),
-            label: Text(
-              "go back",
-              style: TextStyle(
-                fontSize: 20.0,
-                color: Theme.of(context).colorScheme.onError,
-              ),
-            ),
-          ),
+          ...actions,
         ],
       ),
     );
