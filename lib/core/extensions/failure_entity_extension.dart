@@ -9,8 +9,15 @@ extension FailureEntityExtension on FailureEntity {
         title: "Code ${exception.httpCode}: ${exception.status}",
         message: exception.message,
       );
+    } else if (exception is LocationPermissionDeniedForeverException) {
+      return LocationPermissionFailure(
+        exception: exception,
+        title: "Location Access Permission is denied!",
+        message: exception.message,
+      );
     } else if (exception is LocationPermissionDeniedException) {
       return LocationPermissionFailure(
+        exception: exception,
         title: "Location Access Permission is denied!",
         message: exception.message,
       );
