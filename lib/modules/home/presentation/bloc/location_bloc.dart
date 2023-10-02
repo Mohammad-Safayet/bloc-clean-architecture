@@ -17,36 +17,14 @@ class LocationBloc extends Bloc<LocationEvent, BaseState> {
   final _logger = BuildConfig.instance.envConfig.logger;
 
   LocationBloc(this._locationManager) : super(const Initial()) {
-    on<RequestLocationPermission>(_getPermission);
-    on<RequestLocation>(_getLocation);
+    on<RequestCurrentLocation>(_getCurrentLocation);
   }
 
-  Future _getPermission(event, emit) async {
+  Future _getCurrentLocation(event, emit) async {
     emit(const Loading());
 
     try {
-      final result = await _locationManager.getPermission();
-
-      emit(
-        Success(
-          data: result,
-        ),
-      );
-    } catch (error) {
-      final errorEntity = mapError(error as BaseException);
-
-      emit(
-        Error(
-          error: errorEntity,
-        ),
-      );
-    }
-  }
-
-  Future _getLocation(event, emit) async {
-    emit(const Loading());
-
-    try {
+      await _locationManager.getPermission();
       final result = await _locationManager.getCurrentLocation();
 
       _logger.d(result);
