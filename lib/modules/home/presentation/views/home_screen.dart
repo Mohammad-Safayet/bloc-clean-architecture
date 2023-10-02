@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:weather_app/core/routes/app_pages.dart';
@@ -8,7 +9,7 @@ import 'package:weather_app/modules/shared/base/base_view.dart';
 import 'package:weather_app/modules/shared/widgets/loading.dart';
 import 'package:weather_app/modules/weather/presentation/views/weather_screen.dart';
 
-class HomeScreenView extends BaseView<LocationBloc> {
+class HomeScreenView extends BaseView<LocationBloc, Position> {
   @override
   void error(BuildContext context, FailureEntity entity) {
     context.go(
@@ -19,13 +20,15 @@ class HomeScreenView extends BaseView<LocationBloc> {
 
   @override
   Widget initial(LocationBloc bloc) {
-    bloc.add(const RequestLocationPermission());
+    bloc.add(const RequestCurrentLocation());
 
     return const LoadingWidget();
   }
 
   @override
-  Widget success(LocationBloc bloc) {
-    return const WeatherScreenView();
+  Widget success(LocationBloc bloc, Position data) {
+    return WeatherScreenView(
+      position: data,
+    );
   }
 }
