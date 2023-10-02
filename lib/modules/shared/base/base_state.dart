@@ -4,13 +4,13 @@ import 'package:weather_app/core/utils/error_handling/error_handling.dart';
 part 'base_state.freezed.dart';
 
 @freezed
-class BaseState with _$BaseState {
+class BaseState<T> with _$BaseState<T> {
   const factory BaseState.initial() = Initial;
 
   const factory BaseState.loading() = Loading;
 
   const factory BaseState.success({
-    required dynamic data,
+    required T data,
   }) = Success;
 
   const factory BaseState.error({
