@@ -5,7 +5,7 @@ import 'package:weather_app/modules/shared/base/base_state.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 import 'package:weather_app/modules/shared/widgets/loading.dart';
 
-abstract class BaseView<B extends StateStreamable<BaseState>>
+abstract class BaseView<B extends StateStreamable<BaseState>, T extends Object>
     extends StatelessWidget with BaseWidgetMixin {
   BaseView({Key? key}) : super(key: key);
 
@@ -23,7 +23,7 @@ abstract class BaseView<B extends StateStreamable<BaseState>>
         if (state is Initial) {
           return initial(bloc);
         } else if (state is Success) {
-          return success(bloc);
+          return success(bloc, state.data);
         } else {
           return const LoadingWidget();
         }
@@ -33,7 +33,7 @@ abstract class BaseView<B extends StateStreamable<BaseState>>
 
   Widget initial(B bloc);
 
-  Widget success(B bloc);
+  Widget success(B bloc, T data);
 
   void error(
     BuildContext context,
