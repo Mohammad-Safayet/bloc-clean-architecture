@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geolocator/geolocator.dart';
 
 import 'package:weather_app/core/constants/app_values.dart';
-import 'package:weather_app/modules/weather/infra/datasources/remote/weather_remote_datasource_impl.dart';
+import 'package:weather_app/modules/home/presentation/bloc/location_bloc.dart';
 import 'package:weather_app/modules/weather/presentation/views/astronomy_view.dart';
 import 'package:weather_app/modules/weather/presentation/views/current_weather.dart';
 
-class WeatherScreenView extends StatefulWidget {
-  const WeatherScreenView({Key? key}) : super(key: key);
+class WeatherScreenView extends StatelessWidget {
+  const WeatherScreenView({
+    Key? key,
+    required this.position,
+  }) : super(key: key);
 
-  @override
-  State<WeatherScreenView> createState() => _WeatherScreenViewState();
-}
-
-class _WeatherScreenViewState extends State<WeatherScreenView> {
-  @override
-  void initState() {
-    super.initState();
-
-    WeatherRemoteDataSourceImpl().getAstronomyData();
-  }
+  final Position position;
 
   @override
   Widget build(BuildContext context) {
