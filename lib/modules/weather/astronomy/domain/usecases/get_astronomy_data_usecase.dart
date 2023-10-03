@@ -14,14 +14,16 @@ class GetAstronomyDataUsecase extends BaseUsecase<Astronomy> {
   @override
   Future<Either<FailureEntity, Astronomy>> call() async {
     try {
-      final result = await repository.getAstronomyData();
+      final result = await repository.getData(
+        "Dhaka",
+        {"dt": "2023-10-03"},
+      );
 
       return Right(result);
-    } catch(exception) {
+    } catch (exception) {
       final entity = mapExceptionToFailureEntity(exception as Exception);
 
       return Left(entity);
     }
   }
-
 }
