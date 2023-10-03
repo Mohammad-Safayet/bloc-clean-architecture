@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/entities/astro.dart';
-import 'package:weather_app/modules/weather/domain/entities/weather_location.dart';
+import 'package:weather_app/modules/weather/main/domain/entities/weather_location.dart';
 
 part 'astronomy.freezed.dart';
 

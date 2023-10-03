@@ -7,7 +7,7 @@ import 'package:weather_app/core/utils/error_handling/failure_entity.dart';
 import 'package:weather_app/modules/home/presentation/bloc/location_bloc.dart';
 import 'package:weather_app/modules/shared/base/base_view.dart';
 import 'package:weather_app/modules/shared/widgets/loading.dart';
-import 'package:weather_app/modules/weather/presentation/views/weather_screen.dart';
+import 'package:weather_app/modules/weather/main/presentation/views/weather_screen.dart';
 
 class HomeScreenView extends BaseView<LocationBloc, Position> {
   @override

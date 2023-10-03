@@ -3,8 +3,8 @@ import 'package:logger/logger.dart';
 import 'package:weather_app/core/config/config.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/entities/astronomy.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/entities/astronomy_query_param.dart';
-import 'package:weather_app/modules/weather/infra/datasources/weather_remote_datasource.dart';
-import 'package:weather_app/modules/weather/infra/repositories/weather_repo.dart';
+import 'package:weather_app/modules/weather/main/infra/datasources/weather_remote_datasource.dart';
+import 'package:weather_app/modules/weather/main/infra/repositories/weather_repo.dart';
 
 class AstronomyRepository extends WeatherRepository<Astronomy> {
   final WeatherRemoteDataSource remoteDataSource;
