@@ -1,4 +1,4 @@
-import 'package:weather_app/modules/weather/domain/entities/astronomy_query_param.dart';
+import 'package:weather_app/modules/weather/astronomy/domain/entities/astronomy_query_param.dart';
 
 extension AstronomyQueryParamsExtension on AstronomyQueryParam {
   Map<String, String> toQueryParam() {
