@@ -1,3 +1,5 @@
-abstract class WeatherRemoteDataSource<T> {
-  Future<T> getData();
+abstract class WeatherRemoteDataSource<T, Q> {
+  Future<T> getData(
+    Q queryParam,
+  );
 }
