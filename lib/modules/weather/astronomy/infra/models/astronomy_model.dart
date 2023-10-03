@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:weather_app/modules/weather/infra/models/astro_model.dart';
+import 'package:weather_app/modules/weather/astronomy/infra/models/astro_model.dart';
 import 'package:weather_app/modules/weather/infra/models/weather_location_model.dart';
 
 part 'astronomy_model.g.dart';

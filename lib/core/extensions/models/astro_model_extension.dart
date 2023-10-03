@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
 import 'package:weather_app/modules/weather/domain/entities/astro.dart';
-import 'package:weather_app/modules/weather/infra/models/astro_model.dart';
+import 'package:weather_app/modules/weather/astronomy/infra/models/astro_model.dart';
 
 extension AstroModelExtension on AstroModel {
   Astro toEntity() {
