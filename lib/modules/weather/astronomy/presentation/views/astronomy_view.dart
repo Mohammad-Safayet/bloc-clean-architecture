@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
-import 'package:weather_app/modules/weather/presentation/widgets/astronomy/astronomy_info.dart';
+import 'package:weather_app/modules/weather/astronomy/presentation/widgets/astronomy_info.dart';
 
 class AstronomyView extends StatelessWidget with BaseWidgetMixin {
   AstronomyView({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
-import 'package:weather_app/modules/weather/presentation/widgets/astronomy/astronomy_card.dart';
+import 'package:weather_app/modules/weather/astronomy/presentation/widgets/astronomy_card.dart';
 
 class AstronomyInfoView extends StatelessWidget {
   const AstronomyInfoView({Key? key, required this.title}) : super(key: key);
