@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 
 import 'package:weather_app/core/constants/app_values.dart';
-import 'package:weather_app/modules/home/presentation/bloc/location_bloc.dart';
 import 'package:weather_app/modules/weather/astronomy/presentation/views/astronomy_view.dart';
 import 'package:weather_app/modules/weather/current_weather/presentation/views/current_weather.dart';
 
