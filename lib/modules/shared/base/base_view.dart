@@ -21,9 +21,9 @@ abstract class BaseView<B extends StateStreamable<BaseState>, T extends Object>
         final bloc = context.read<B>();
 
         if (state is Initial) {
-          return initial(bloc);
+          return initial(context, bloc);
         } else if (state is Success) {
-          return success(bloc, state.data);
+          return success(context, bloc, state.data);
         } else {
           return const LoadingWidget();
         }
@@ -31,9 +31,16 @@ abstract class BaseView<B extends StateStreamable<BaseState>, T extends Object>
     );
   }
 
-  Widget initial(B bloc);
+  Widget initial(
+    BuildContext context,
+    B bloc,
+  );
 
-  Widget success(B bloc, T data);
+  Widget success(
+    BuildContext context,
+    B bloc,
+    T data,
+  );
 
   void error(
     BuildContext context,
