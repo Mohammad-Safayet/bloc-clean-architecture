@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/core/services/location_manager.dart';
 
-import 'package:weather_app/core/services/location_manager_impl.dart';
+import 'package:weather_app/core/services/location_manager.dart';
 import 'package:weather_app/core/utils/di/di.dart';
 import 'package:weather_app/core/utils/error_handling/failure_entity.dart';
 import 'package:weather_app/modules/home/home.dart';

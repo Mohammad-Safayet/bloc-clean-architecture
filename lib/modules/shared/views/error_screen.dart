@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:go_router/go_router.dart';
+
 import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
-import 'package:weather_app/core/routes/app_pages.dart';
 import 'package:weather_app/core/utils/error_handling/failure_entity.dart';
 import 'package:weather_app/modules/shared/base/base_screen.dart';
 import 'package:weather_app/modules/shared/widgets/error_button.dart';

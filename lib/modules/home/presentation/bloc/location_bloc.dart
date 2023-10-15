@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:weather_app/core/config/build_config.dart';
 import 'package:weather_app/core/services/location_manager.dart';
-import 'package:weather_app/core/services/location_manager_impl.dart';
 import 'package:weather_app/core/utils/error_handling/error_handling.dart';
 
 import 'package:weather_app/modules/shared/base/base_state.dart';

@@ -4,7 +4,7 @@ import 'package:weather_app/core/extensions/failure_entity_extension.dart';
 import 'package:weather_app/core/utils/error_handling/error_handling.dart';
 
 abstract class BaseUsecase<T extends Object> {
-  final _logger = BuildConfig.instance.envConfig.logger;
+  final logger = BuildConfig.instance.envConfig.logger;
 
   Future<Either<FailureEntity, T>> call();
 
