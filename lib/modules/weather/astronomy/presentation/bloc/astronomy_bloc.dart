@@ -25,6 +25,8 @@ class AstronomyBloc extends Bloc<AstronomyEvent, BaseState> {
     final usecase = GetAstronomyDataUsecase(
       repository: _repository,
     );
+    usecase.q = event.q;
+    usecase.dt = event.dt;
 
     final result = await usecase.call();
     _logger.d(result);
