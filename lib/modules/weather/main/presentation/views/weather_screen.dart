@@ -73,7 +73,9 @@ class WeatherScreenView extends BaseView<ConnectivityBloc, bool> {
             CurrentWeatherView(),
 
             // Astronomy information
-            AstronomyView(),
+            AstronomyView(
+              position: position,
+            ),
           ],
         ),
       ),
