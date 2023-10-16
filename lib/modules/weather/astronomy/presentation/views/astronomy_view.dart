@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:weather_app/core/constants/app_values.dart';
@@ -11,6 +12,13 @@ import 'package:weather_app/modules/weather/astronomy/presentation/bloc/astronom
 import 'package:weather_app/modules/weather/astronomy/presentation/widgets/astronomy_info.dart';
 
 class AstronomyView extends BaseView<AstronomyBloc, Astronomy> {
+  final Position position;
+
+  AstronomyView({
+    super.key,
+    required this.position,
+  });
+
   @override
   void error(BuildContext context, FailureEntity entity,) {
     context.go(Routes.ERROR, extra: entity);
