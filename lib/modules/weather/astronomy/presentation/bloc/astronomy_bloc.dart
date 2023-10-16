@@ -26,9 +26,7 @@ class AstronomyBloc extends Bloc<AstronomyEvent, BaseState> {
       repository: _repository,
     );
 
-    final result = await usecase.call(
-      AstronomyQueryParam(key: "key", q: "", dt: "dt"),
-    );
+    final result = await usecase.call();
     _logger.d(result);
 
     result.fold((entity) {
