@@ -3,6 +3,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:weather_app/core/constants/app_values.dart';
+import 'package:weather_app/core/extensions/datetime_extension.dart';
+import 'package:weather_app/core/extensions/position_extension.dart';
 import 'package:weather_app/core/routes/app_pages.dart';
 import 'package:weather_app/core/utils/error_handling/failure_entity.dart';
 import 'package:weather_app/modules/shared/base/base_view.dart';
@@ -20,19 +22,36 @@ class AstronomyView extends BaseView<AstronomyBloc, Astronomy> {
   });
 
   @override
-  void error(BuildContext context, FailureEntity entity,) {
+  void error(
+    BuildContext context,
+    FailureEntity entity,
+  ) {
     context.go(Routes.ERROR, extra: entity);
   }
 
   @override
-  Widget initial(BuildContext context, AstronomyBloc bloc,) {
-    bloc.add(const GetAstronomyData());
+  Widget initial(
+    BuildContext context,
+    AstronomyBloc bloc,
+  ) {
+    final now = DateTime.now();
+
+    bloc.add(
+      GetAstronomyData(
+        q: position.toQString(),
+        dt: now.toQString(),
+      ),
+    );
 
     return const LoadingWidget();
   }
 
   @override
-  Widget success(BuildContext context, AstronomyBloc bloc, Astronomy data,) {
+  Widget success(
+    BuildContext context,
+    AstronomyBloc bloc,
+    Astronomy data,
+  ) {
     return Container(
       padding: const EdgeInsets.symmetric(
         vertical: AppValues.padding,
