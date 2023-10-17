@@ -2,10 +2,10 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'package:weather_app/modules/weather/current_weather/infra/models/condition_model.dart';
 
-part 'weather_current_model.g.dart';
+part 'current_model.g.dart';
 
 @JsonSerializable()
-class CurrentWeatherModel {
+class CurrentModel {
   @JsonKey(name: "last_updated")
   final DateTime lastUpdated;
   @JsonKey(name: "temp_c")
@@ -47,7 +47,7 @@ class CurrentWeatherModel {
   @JsonKey(name: "gust_kph")
   final double gustKph;
 
-  CurrentWeatherModel({
+  CurrentModel({
     required this.lastUpdated,
     required this.tempC,
     required this.tempF,
@@ -72,8 +72,8 @@ class CurrentWeatherModel {
     required this.gustKph,
   });
 
-  factory CurrentWeatherModel.fromJson(Map<String, dynamic> json) =>
-      _$CurrentWeatherModelFromJson(json);
+  factory CurrentModel.fromJson(Map<String, dynamic> json) =>
+      _$CurrentModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CurrentWeatherModelToJson(this);
+  Map<String, dynamic> toJson() => _$CurrentModelToJson(this);
 }
