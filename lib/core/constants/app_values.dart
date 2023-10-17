@@ -141,4 +141,7 @@ abstract class AppValues {
 
   // DateTime Format pattern
   static const yyyyMMddHHmm = "yyyy-MM-dd HH:mm";
+
+  // Duration 1 Day
+  static const duration1D = Duration(days: 1);
 }
