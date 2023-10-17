@@ -2,16 +2,15 @@ import 'package:dartz/dartz.dart';
 import 'package:weather_app/core/utils/error_handling/error_handling.dart';
 import 'package:weather_app/modules/shared/base/base_usecase.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/entities/astronomy.dart';
-import 'package:weather_app/modules/weather/astronomy/domain/entities/astronomy_query_param.dart';
+import 'package:weather_app/modules/weather/astronomy/domain/repositories/astronomy_repo.dart';
 import 'package:weather_app/modules/weather/main/infra/repositories/weather_repo.dart';
 
-class GetAstronomyDataUsecase extends BaseUsecase<Astronomy> {
-  final WeatherRepository repository;
+class GetTomorrowAstronomyDataUsecase extends BaseUsecase<Astronomy> {
+  final AstronomyRepository repository;
 
   String _q = "";
-  String _dt = "";
 
-  GetAstronomyDataUsecase({
+  GetTomorrowAstronomyDataUsecase({
     required this.repository,
   });
 
@@ -19,17 +18,10 @@ class GetAstronomyDataUsecase extends BaseUsecase<Astronomy> {
     _q = q;
   }
 
-  set dt(String dt) {
-    _dt = dt;
-  }
-
   @override
   Future<Either<FailureEntity, Astronomy>> call() async {
     try {
-      final result = await repository.getData(
-        _q,
-        {"dt": _dt},
-      );
+      final result = await repository.getTomorrowData(_q);
 
       return Right(result);
     } catch (exception) {
