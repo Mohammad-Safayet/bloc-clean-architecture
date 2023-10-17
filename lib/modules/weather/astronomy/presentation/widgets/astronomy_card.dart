@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
+import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 
-class AstronomyCardWidget extends StatelessWidget {
-  const AstronomyCardWidget({
+class AstronomyCardWidget extends StatelessWidget with BaseWidgetMixin {
+  AstronomyCardWidget({
     Key? key,
     required this.imgLink,
     required this.time,
@@ -14,7 +15,7 @@ class AstronomyCardWidget extends StatelessWidget {
   final String time;
 
   @override
-  Widget build(BuildContext context) {
+  Widget body(BuildContext context) {
     return Card(
       borderOnForeground: true,
       elevation: AppValues.elevationLvl2,
