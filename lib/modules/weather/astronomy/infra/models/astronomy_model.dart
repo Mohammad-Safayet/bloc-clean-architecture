@@ -1,4 +1,5 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
+
 import 'package:weather_app/modules/weather/astronomy/infra/models/astro_model.dart';
 import 'package:weather_app/modules/weather/main/infra/models/weather_location_model.dart';
 
