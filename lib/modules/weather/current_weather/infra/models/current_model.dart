@@ -13,7 +13,7 @@ class CurrentModel {
   @JsonKey(name: "temp_f")
   final double tempF;
   @JsonKey(name: "is_day")
-  final bool isDay;
+  final int isDay;
   final ConditionModel condition;
   @JsonKey(name: "wind_mph")
   final double windMph;
