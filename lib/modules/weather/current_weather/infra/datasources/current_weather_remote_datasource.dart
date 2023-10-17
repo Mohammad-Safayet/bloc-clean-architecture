@@ -22,8 +22,6 @@ class CurrentWeatherRemoteDataSource extends BaseRemoteDataSource
       final response = await callApiWithErrorParser(api);
       final data = response.data;
 
-      logger.d(WeatherModel.fromJson(data));
-
       return WeatherModel.fromJson(data);
     } catch (e) {
       rethrow;
