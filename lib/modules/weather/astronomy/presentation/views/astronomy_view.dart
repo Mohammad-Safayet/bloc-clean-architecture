@@ -34,12 +34,9 @@ class AstronomyView extends BaseView<AstronomyBloc, Astronomy> {
     BuildContext context,
     AstronomyBloc bloc,
   ) {
-    final now = DateTime.now();
-
     bloc.add(
-      GetAstronomyData(
+      GetTodayAstronomyData(
         q: position.toQString(),
-        dt: now.toQString(),
       ),
     );
 
@@ -57,7 +54,7 @@ class AstronomyView extends BaseView<AstronomyBloc, Astronomy> {
         vertical: AppValues.padding,
       ),
       child: AstronomyInfoView(
-        title: "Astronomy",
+        astronomy: data,
       ),
     );
   }
