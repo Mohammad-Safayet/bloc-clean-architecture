@@ -128,6 +128,7 @@ abstract class AppValues {
   static const int gridChildCount_3 = 3;
   static const double gridChildAspectRatio_1_25 = 1.25;
   static const double gridChildAspectRatio_1_15 = 1.15;
+  static const double gridChildAspectRatio_1_35 = 1.35;
   static const double axisSpacing_1 = 1;
   static const double axisSpacing_2 = 2;
   static const double axisSpacing_3 = 3;
