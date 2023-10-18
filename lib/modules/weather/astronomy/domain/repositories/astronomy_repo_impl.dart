@@ -3,7 +3,7 @@ import 'package:logger/logger.dart';
 import 'package:weather_app/core/config/config.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/core/extensions/datetime_extension.dart';
-import 'package:weather_app/core/extensions/models/astronomy_model_extension.dart';
+import 'package:weather_app/core/extensions/models/astronomy/astronomy_model_extension.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/entities/astronomy.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/entities/astronomy_query_param.dart';
 import 'package:weather_app/modules/weather/astronomy/infra/models/astronomy_model.dart';
@@ -12,7 +12,6 @@ import 'package:weather_app/modules/weather/main/infra/repositories/weather_repo
 
 class AstronomyRepository extends WeatherRepository<Astronomy> {
   final WeatherRemoteDataSource remoteDataSource;
-  final Logger _logger = BuildConfig.instance.envConfig.logger;
 
   AstronomyRepository({required this.remoteDataSource});
 
