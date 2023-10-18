@@ -7,30 +7,20 @@ import 'package:weather_app/core/extensions/models/astronomy/astronomy_model_ext
 import 'package:weather_app/modules/weather/astronomy/domain/entities/astronomy.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/entities/astronomy_query_param.dart';
 import 'package:weather_app/modules/weather/astronomy/infra/models/astronomy_model.dart';
+import 'package:weather_app/modules/weather/astronomy/infra/repositories/astronomy_repo.dart';
 import 'package:weather_app/modules/weather/main/infra/datasources/weather_remote_datasource.dart';
 import 'package:weather_app/modules/weather/main/infra/repositories/weather_repo.dart';
 
-class AstronomyRepository extends WeatherRepository<Astronomy> {
+class AstronomyRepositoryImpl extends WeatherRepository<Astronomy>
+    implements AstronomyRepository {
+  @override
   final WeatherRemoteDataSource remoteDataSource;
 
-  AstronomyRepository({required this.remoteDataSource});
+  AstronomyRepositoryImpl({
+    required this.remoteDataSource,
+  });
 
   @override
-  Future<Astronomy> getData(
-    dynamic query,
-  ) async {
-    try {
-      final AstronomyModel astronomyModel =
-          await remoteDataSource.getData(query);
-
-      final astronomy = astronomyModel.toEntity();
-
-      return astronomy;
-    } catch (e) {
-      rethrow;
-    }
-  }
-
   Future<Astronomy> getTodayData(String q) {
     try {
       final now = DateTime.now();
@@ -48,6 +38,7 @@ class AstronomyRepository extends WeatherRepository<Astronomy> {
     }
   }
 
+  @override
   Future<Astronomy> getTomorrowData(String q) {
     try {
       final tmr = DateTime.now().add(
@@ -65,5 +56,12 @@ class AstronomyRepository extends WeatherRepository<Astronomy> {
     } catch (e) {
       rethrow;
     }
+  }
+
+  @override
+  Astronomy convert(model) {
+    final astronomy = (model as AstronomyModel).toEntity();
+
+    return astronomy;
   }
 }
