@@ -4,7 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:weather_app/core/utils/di/di.dart';
 
 import 'package:weather_app/modules/shared/base/base_screen.dart';
-import 'package:weather_app/modules/weather/astronomy/domain/repositories/astronomy_repo.dart';
+import 'package:weather_app/modules/weather/astronomy/domain/repositories/astronomy_repo_impl.dart';
 import 'package:weather_app/modules/weather/astronomy/infra/datasources/astronomy_remote_datasource.dart';
 import 'package:weather_app/modules/weather/astronomy/presentation/bloc/astronomy_bloc.dart';
 import 'package:weather_app/modules/weather/main/presentation/bloc/connectivity_bloc.dart';
@@ -34,7 +34,7 @@ class WeatherPage extends BaseScreen {
         ),
         BlocProvider(
           create: (context) => AstronomyBloc(
-            DependencyInjection.instance.getInstance<AstronomyRepository>(),
+            DependencyInjection.instance.getInstance<AstronomyRepositoryImpl>(),
           ),
         ),
       ],
@@ -52,8 +52,8 @@ class WeatherPage extends BaseScreen {
       DiType.SINGLETON,
     );
 
-    di.register<AstronomyRepository>(
-      AstronomyRepository(
+    di.register<AstronomyRepositoryImpl>(
+      AstronomyRepositoryImpl(
         remoteDataSource: di.getInstance<AstronomyRemoteDataSource>(),
       ),
       DiType.SINGLETON,
