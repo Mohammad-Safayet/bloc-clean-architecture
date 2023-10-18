@@ -41,9 +41,9 @@ class AstronomyInfoView extends StatelessWidget with BaseWidgetMixin {
           primary: false,
           shrinkWrap: true,
           crossAxisCount: AppValues.gridChildCount_2,
-          crossAxisSpacing: AppValues.axisSpacing_25,
+          crossAxisSpacing: AppValues.axisSpacing_10,
           mainAxisSpacing: AppValues.axisSpacing_15,
-          childAspectRatio: AppValues.gridChildAspectRatio_1_15,
+          childAspectRatio: AppValues.gridChildAspectRatio_1_35,
           children: [
             AstronomyCardWidget(
               imgLink: "assets/images/sunrise.png",
