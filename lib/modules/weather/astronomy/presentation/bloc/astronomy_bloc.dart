@@ -3,9 +3,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:weather_app/core/config/config.dart';
 import 'package:weather_app/modules/shared/base/base_state.dart';
-import 'package:weather_app/modules/weather/astronomy/domain/repositories/astronomy_repo.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/usecases/get_today_astronomy_data_usecase.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/usecases/get_tomorrow_astronomy_data_usecase.dart';
+import 'package:weather_app/modules/weather/astronomy/infra/repositories/astronomy_repo.dart';
 
 part 'astronomy_event.dart';
 
