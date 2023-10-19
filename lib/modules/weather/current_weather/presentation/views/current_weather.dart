@@ -71,7 +71,11 @@ class CurrentWeatherView extends BaseView<CurrentWeatherBloc, Weather> {
           ),
 
           // Weather DisPlay
-          WeatherDisplayWidget(),
+          WeatherDisplayWidget(
+            temp: data.current.tempC,
+            imgLink: data.current.condition.iconHttp,
+            condition: data.current.condition.text,
+          ),
 
           // Weather Info Cards
           WeatherInfoWidget(),

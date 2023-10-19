@@ -5,7 +5,16 @@ import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 
 class WeatherDisplayWidget extends StatelessWidget with BaseWidgetMixin {
-  WeatherDisplayWidget({Key? key}) : super(key: key);
+  WeatherDisplayWidget({
+    Key? key,
+    required this.temp,
+    required this.imgLink,
+    required this.condition,
+  }) : super(key: key);
+
+  final double temp;
+  final String imgLink;
+  final String condition;
 
   @override
   Widget body(BuildContext context) {
@@ -17,8 +26,8 @@ class WeatherDisplayWidget extends StatelessWidget with BaseWidgetMixin {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            "17.4\u00B0",
+          Text(
+            "${temp.toString()}${AppValues.celsius}",
             style: AppTextStyles.displayBig,
             textAlign: TextAlign.center,
           ),
@@ -30,15 +39,15 @@ class WeatherDisplayWidget extends StatelessWidget with BaseWidgetMixin {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.network(
-                "https://cdn.weatherapi.com/weather/64x64/day/176.png",
+                "https:$imgLink",
                 height: AppValues.iconLarge,
                 width: AppValues.iconLarge,
               ),
               const SizedBox(
                 width: AppValues.space_10,
               ),
-              const Text(
-                "Patchy rain possible",
+              Text(
+                condition,
                 style: AppTextStyles.subTitle,
               ),
             ],
