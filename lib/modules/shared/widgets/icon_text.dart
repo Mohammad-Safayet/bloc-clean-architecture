@@ -16,9 +16,11 @@ class IconTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(
-        bottom: AppValues.padding_4,
+      margin: const EdgeInsets.only(
+        bottom: AppValues.margin_4,
       ),
+      color: Colors.blue,
+      alignment: Alignment.topRight,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,11 +29,13 @@ class IconTextWidget extends StatelessWidget {
           const SizedBox(
             width: AppValues.space_6,
           ),
-          Text(
-            text,
-            style: AppTextStyles.titleSmall,
-            overflow: TextOverflow.ellipsis,
-            maxLines: 1,
+          Expanded(
+            child: Text(
+              text,
+              style: AppTextStyles.titleSmall,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
           ),
         ],
       ),

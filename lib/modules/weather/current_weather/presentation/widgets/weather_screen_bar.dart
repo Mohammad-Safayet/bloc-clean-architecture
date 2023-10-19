@@ -18,31 +18,36 @@ class WeatherScreenBarWidget extends StatelessWidget with BaseWidgetMixin {
 
   @override
   Widget body(BuildContext context) {
-    return Container(
+    return Padding(
       padding: const EdgeInsets.only(
         bottom: AppValues.paddingSmall,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          IconTextWidget(
-            icon: const FaIcon(
-              FontAwesomeIcons.mapPin,
-              size: AppValues.icon_12,
+          Expanded(
+            flex: 3,
+            child: IconTextWidget(
+              icon: const FaIcon(
+                FontAwesomeIcons.mapPin,
+                size: AppValues.icon_12,
+              ),
+              text: locationCity,
             ),
-            text: locationCity,
           ),
-          Container(
-            width: 36.0,
+          const SizedBox(
+            width: AppValues.space_10,
           ),
-          IconTextWidget(
-            icon: const FaIcon(
-              FontAwesomeIcons.sun,
-              size: AppValues.icon_12,
+          Expanded(
+            flex: 4,
+            child: IconTextWidget(
+              icon: const FaIcon(
+                FontAwesomeIcons.sun,
+                size: AppValues.icon_12,
+              ),
+              text: locationContinent,
             ),
-            text:
-                "aldkflksdfsodlfkjsodifsldfjsodifjsldkfjsodiflsdkfosldkfjokdsdf",
           ),
         ],
       ),
