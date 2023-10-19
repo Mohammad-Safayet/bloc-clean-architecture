@@ -9,6 +9,7 @@ import 'package:weather_app/modules/weather/astronomy/infra/datasources/astronom
 import 'package:weather_app/modules/weather/astronomy/presentation/bloc/astronomy_bloc.dart';
 import 'package:weather_app/modules/weather/current_weather/domain/repositories/current_weather_repository_impl.dart';
 import 'package:weather_app/modules/weather/current_weather/infra/datasources/current_weather_remote_datasource.dart';
+import 'package:weather_app/modules/weather/current_weather/presentation/bloc/current_weather_bloc.dart';
 import 'package:weather_app/modules/weather/main/presentation/bloc/connectivity_bloc.dart';
 import 'package:weather_app/modules/weather/main/presentation/views/weather_screen.dart';
 
@@ -37,6 +38,11 @@ class WeatherPage extends BaseScreen {
         BlocProvider(
           create: (context) => AstronomyBloc(
             DependencyInjection.instance.getInstance<AstronomyRepositoryImpl>(),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => CurrentWeatherBloc(
+            DependencyInjection.instance.getInstance<CurrentWeatherRepositoryImpl>(),
           ),
         ),
       ],
