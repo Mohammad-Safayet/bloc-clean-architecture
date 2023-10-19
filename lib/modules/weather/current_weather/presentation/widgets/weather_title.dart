@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
+import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 
-class WeatherTitleWidget extends StatelessWidget {
-  const WeatherTitleWidget({Key? key}) : super(key: key);
+class WeatherTitleWidget extends StatelessWidget with BaseWidgetMixin {
+  WeatherTitleWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget body(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(
         bottom: AppValues.paddingSmall,

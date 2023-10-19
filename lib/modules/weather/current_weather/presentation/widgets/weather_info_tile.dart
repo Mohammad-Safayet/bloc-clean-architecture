@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
+import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 
-class WeatherInfoTileWidget extends StatelessWidget {
-  const WeatherInfoTileWidget({
+class WeatherInfoTileWidget extends StatelessWidget with BaseWidgetMixin {
+  WeatherInfoTileWidget({
     Key? key,
     required this.bgColor,
     required this.title,
@@ -17,7 +18,7 @@ class WeatherInfoTileWidget extends StatelessWidget {
   final String? unit;
 
   @override
-  Widget build(BuildContext context) {
+  Widget body(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: bgColor,

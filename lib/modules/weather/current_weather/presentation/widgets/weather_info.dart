@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:weather_app/core/constants/app_values.dart';
+import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 import 'package:weather_app/modules/weather/current_weather/presentation/widgets/weather_info_tile.dart';
 
-class WeatherInfoWidget extends StatelessWidget {
-  const WeatherInfoWidget({Key? key}) : super(key: key);
+class WeatherInfoWidget extends StatelessWidget with BaseWidgetMixin {
+  WeatherInfoWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget body(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(
         bottom: AppValues.margin_6,
@@ -15,10 +16,10 @@ class WeatherInfoWidget extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: RadialGradient(
           colors: [
-            Theme.of(context).colorScheme.outline.withOpacity(0.4),
+            Theme.of(context).colorScheme.outline,
             Theme.of(context).colorScheme.surface,
           ],
-          radius: 0.75,
+          radius: 0.65,
           focal: Alignment.center,
         ),
       ),
@@ -27,6 +28,7 @@ class WeatherInfoWidget extends StatelessWidget {
         shrinkWrap: true,
         crossAxisCount: AppValues.gridChildCount_3,
         crossAxisSpacing: AppValues.axisSpacing_2,
+        childAspectRatio: 1.35,
         children: [
           WeatherInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
