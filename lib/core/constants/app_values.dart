@@ -145,4 +145,8 @@ abstract class AppValues {
 
   // Duration 1 Day
   static const duration1D = Duration(days: 1);
+
+  // Unicode symbol
+  static const celsius = "\u2103";
+  static const fahrenheit = "\u2109";
 }
