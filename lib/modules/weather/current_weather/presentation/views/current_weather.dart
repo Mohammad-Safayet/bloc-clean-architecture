@@ -59,7 +59,10 @@ class CurrentWeatherView extends BaseView<CurrentWeatherBloc, Weather> {
             height: AppValues.space_16,
           ),
           // Location Title Bar
-          WeatherScreenBarWidget(),
+          WeatherScreenBarWidget(
+            locationCity: data.location.name,
+            locationContinent: data.location.tzId,
+          ),
 
           // Datetime of the day
           WeatherTitleWidget(),
