@@ -7,7 +7,14 @@ import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 import 'package:weather_app/modules/shared/widgets/icon_text.dart';
 
 class WeatherScreenBarWidget extends StatelessWidget with BaseWidgetMixin {
-WeatherScreenBarWidget({Key? key}) : super(key: key);
+  WeatherScreenBarWidget({
+    Key? key,
+    required this.locationCity,
+    required this.locationContinent,
+  }) : super(key: key);
+
+  final String locationCity;
+  final String locationContinent;
 
   @override
   Widget body(BuildContext context) {
@@ -15,29 +22,27 @@ WeatherScreenBarWidget({Key? key}) : super(key: key);
       padding: const EdgeInsets.only(
         bottom: AppValues.paddingSmall,
       ),
-      child: const Row(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconTextWidget(
-            icon: FaIcon(
+            icon: const FaIcon(
               FontAwesomeIcons.mapPin,
               size: AppValues.icon_12,
             ),
-            text: Text(
-              "Los Angeles",
-              style: AppTextStyles.titleSmall,
-            ),
+            text: locationCity,
+          ),
+          Container(
+            width: 36.0,
           ),
           IconTextWidget(
-            icon: FaIcon(
+            icon: const FaIcon(
               FontAwesomeIcons.sun,
               size: AppValues.icon_12,
             ),
-            text: Text(
-              "Asia/Dhaka",
-              style: AppTextStyles.titleSmall,
-            ),
+            text:
+                "aldkflksdfsodlfkjsodifsldfjsodifjsldkfjsodiflsdkfosldkfjokdsdf",
           ),
         ],
       ),
