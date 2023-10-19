@@ -70,7 +70,9 @@ class WeatherScreenView extends BaseView<ConnectivityBloc, bool> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Current Weather info
-            CurrentWeatherView(),
+            CurrentWeatherView(
+              position: position,
+            ),
 
             // Astronomy information
             AstronomyView(
