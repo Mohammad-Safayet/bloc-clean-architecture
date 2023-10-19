@@ -13,9 +13,9 @@ class CurrentWeatherRepositoryImpl extends WeatherRepository<Weather>
   @override
   final WeatherRemoteDataSource remoteDataSource;
 
-  CurrentWeatherRepositoryImpl(
-    this.remoteDataSource,
-  );
+  CurrentWeatherRepositoryImpl({
+    required this.remoteDataSource,
+  });
 
   @override
   Weather convert(model) {
