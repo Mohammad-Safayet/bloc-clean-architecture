@@ -19,15 +19,12 @@ class IconTextWidget extends StatelessWidget {
       margin: const EdgeInsets.only(
         bottom: AppValues.margin_4,
       ),
-      color: Colors.blue,
-      alignment: Alignment.topRight,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           icon,
           const SizedBox(
-            width: AppValues.space_6,
+            width: AppValues.space_4,
           ),
           Expanded(
             child: Text(

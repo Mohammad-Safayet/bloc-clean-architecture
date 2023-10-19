@@ -62,6 +62,7 @@ class CurrentWeatherView extends BaseView<CurrentWeatherBloc, Weather> {
           WeatherScreenBarWidget(
             locationCity: data.location.name,
             locationContinent: data.location.tzId,
+            isDay: data.current.isDay,
           ),
 
           // Datetime of the day

@@ -11,10 +11,12 @@ class WeatherScreenBarWidget extends StatelessWidget with BaseWidgetMixin {
     Key? key,
     required this.locationCity,
     required this.locationContinent,
+    required this.isDay,
   }) : super(key: key);
 
   final String locationCity;
   final String locationContinent;
+  final bool isDay;
 
   @override
   Widget body(BuildContext context) {
@@ -29,24 +31,24 @@ class WeatherScreenBarWidget extends StatelessWidget with BaseWidgetMixin {
           Expanded(
             flex: 3,
             child: IconTextWidget(
-              icon: const FaIcon(
-                FontAwesomeIcons.mapPin,
+              icon: FaIcon(
+                (isDay) ? FontAwesomeIcons.sun : FontAwesomeIcons.moon,
                 size: AppValues.icon_12,
               ),
-              text: locationCity,
+              text: locationContinent,
             ),
           ),
           const SizedBox(
             width: AppValues.space_10,
           ),
           Expanded(
-            flex: 4,
+            flex: 2,
             child: IconTextWidget(
               icon: const FaIcon(
-                FontAwesomeIcons.sun,
+                FontAwesomeIcons.mapPin,
                 size: AppValues.icon_12,
               ),
-              text: locationContinent,
+              text: locationCity,
             ),
           ),
         ],
