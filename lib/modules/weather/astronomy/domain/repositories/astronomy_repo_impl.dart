@@ -1,6 +1,4 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:logger/logger.dart';
-import 'package:weather_app/core/config/config.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/core/extensions/datetime_extension.dart';
 import 'package:weather_app/core/extensions/models/astronomy/astronomy_model_extension.dart';

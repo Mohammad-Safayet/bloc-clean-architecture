@@ -17,7 +17,7 @@ class WeatherDisplayWidget extends StatelessWidget with BaseWidgetMixin {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             "17.4\u00B0",
             style: AppTextStyles.displayBig,
             textAlign: TextAlign.center,
@@ -37,7 +37,7 @@ class WeatherDisplayWidget extends StatelessWidget with BaseWidgetMixin {
               const SizedBox(
                 width: AppValues.space_10,
               ),
-              Text(
+              const Text(
                 "Patchy rain possible",
                 style: AppTextStyles.subTitle,
               ),

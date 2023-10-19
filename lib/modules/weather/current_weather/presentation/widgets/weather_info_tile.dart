@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/constants/app_text_styles.dart';
-import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 
 class WeatherInfoTileWidget extends StatelessWidget with BaseWidgetMixin {

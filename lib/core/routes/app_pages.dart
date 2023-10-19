@@ -33,7 +33,7 @@ abstract class AppPages {
 
       return ErrorScreen(
         failureEntity: failureEntity,
-        actions: [],
+        actions: const [],
       );
     },
     routes: [
@@ -63,7 +63,7 @@ abstract class AppPages {
 
             return ErrorScreen(
               failureEntity: failureEntity,
-              actions: [],
+              actions: const [],
             );
           }),
     ],

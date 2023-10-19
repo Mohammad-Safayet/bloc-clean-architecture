@@ -3,7 +3,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:weather_app/core/constants/app_values.dart';
-import 'package:weather_app/core/extensions/datetime_extension.dart';
 import 'package:weather_app/core/extensions/position_extension.dart';
 import 'package:weather_app/core/routes/app_pages.dart';
 import 'package:weather_app/core/utils/error_handling/failure_entity.dart';
