@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
+import 'package:weather_app/modules/weather/current_weather/domain/entities/current.dart';
 import 'package:weather_app/modules/weather/current_weather/presentation/widgets/weather_info_tile.dart';
 
 class WeatherInfoWidget extends StatelessWidget with BaseWidgetMixin {
-  WeatherInfoWidget({Key? key}) : super(key: key);
+  WeatherInfoWidget({
+    Key? key,
+    required this.current,
+  }) : super(key: key);
+
+  final Current current;
 
   @override
   Widget body(BuildContext context) {
@@ -16,10 +22,10 @@ class WeatherInfoWidget extends StatelessWidget with BaseWidgetMixin {
       decoration: BoxDecoration(
         gradient: RadialGradient(
           colors: [
-            Theme.of(context).colorScheme.outline,
+            Theme.of(context).colorScheme.outline.withOpacity(0.8),
             Theme.of(context).colorScheme.surface,
           ],
-          radius: 0.65,
+          radius: 0.85,
           focal: Alignment.center,
         ),
       ),
@@ -33,18 +39,18 @@ class WeatherInfoWidget extends StatelessWidget with BaseWidgetMixin {
           WeatherInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
             title: "Humidity",
-            value: "35",
+            value: current.humidity.toString(),
             unit: "%",
           ),
           WeatherInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
             title: "UV Index",
-            value: "35",
+            value: current.uv.toString(),
           ),
           WeatherInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
             title: "Wind",
-            value: "6",
+            value: current.windKph.toString(),
             unit: "kph",
           ),
         ],

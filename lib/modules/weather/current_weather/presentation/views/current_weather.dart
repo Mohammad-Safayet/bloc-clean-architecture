@@ -78,7 +78,9 @@ class CurrentWeatherView extends BaseView<CurrentWeatherBloc, Weather> {
           ),
 
           // Weather Info Cards
-          WeatherInfoWidget(),
+          WeatherInfoWidget(
+            current: data.current,
+          ),
 
           // View more Button
           ViewDetailsButtonWidget(),
