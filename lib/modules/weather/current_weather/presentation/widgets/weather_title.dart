@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 
 class WeatherTitleWidget extends StatelessWidget with BaseWidgetMixin {
-  WeatherTitleWidget({Key? key}) : super(key: key);
+  WeatherTitleWidget({
+    Key? key,
+    required this.localTime,
+  }) : super(key: key);
+
+  final DateTime localTime;
 
   @override
   Widget body(BuildContext context) {
@@ -15,13 +21,13 @@ class WeatherTitleWidget extends StatelessWidget with BaseWidgetMixin {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(
-            "Saturday",
+          Text(
+            DateFormat().add_EEEE().format(localTime),
             style: AppTextStyles.titleLarge,
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            width: 35.0,
+            width: 25.0,
             child: Center(
               child: Container(
                 margin: const EdgeInsetsDirectional.symmetric(
@@ -32,8 +38,8 @@ class WeatherTitleWidget extends StatelessWidget with BaseWidgetMixin {
               ),
             ),
           ),
-          const Text(
-            "10 Fab",
+          Text(
+            DateFormat().add_MMMMd().format(localTime),
             style: AppTextStyles.titleLarge,
             textAlign: TextAlign.center,
           ),

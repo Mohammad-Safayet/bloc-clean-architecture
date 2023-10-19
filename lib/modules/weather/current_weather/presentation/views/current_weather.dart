@@ -66,7 +66,9 @@ class CurrentWeatherView extends BaseView<CurrentWeatherBloc, Weather> {
           ),
 
           // Datetime of the day
-          WeatherTitleWidget(),
+          WeatherTitleWidget(
+            localTime: data.current.lastUpdated,
+          ),
 
           // Weather DisPlay
           WeatherDisplayWidget(),
