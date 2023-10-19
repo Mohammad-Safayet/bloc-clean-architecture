@@ -7,6 +7,8 @@ import 'package:weather_app/modules/shared/base/base_screen.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/repositories/astronomy_repo_impl.dart';
 import 'package:weather_app/modules/weather/astronomy/infra/datasources/astronomy_remote_datasource.dart';
 import 'package:weather_app/modules/weather/astronomy/presentation/bloc/astronomy_bloc.dart';
+import 'package:weather_app/modules/weather/current_weather/domain/repositories/current_weather_repository_impl.dart';
+import 'package:weather_app/modules/weather/current_weather/infra/datasources/current_weather_remote_datasource.dart';
 import 'package:weather_app/modules/weather/main/presentation/bloc/connectivity_bloc.dart';
 import 'package:weather_app/modules/weather/main/presentation/views/weather_screen.dart';
 
@@ -55,6 +57,18 @@ class WeatherPage extends BaseScreen {
     di.register<AstronomyRepositoryImpl>(
       AstronomyRepositoryImpl(
         remoteDataSource: di.getInstance<AstronomyRemoteDataSource>(),
+      ),
+      DiType.SINGLETON,
+    );
+
+    di.register<CurrentWeatherRemoteDataSource>(
+      CurrentWeatherRemoteDataSource(),
+      DiType.SINGLETON,
+    );
+
+    di.register<CurrentWeatherRepositoryImpl>(
+      CurrentWeatherRepositoryImpl(
+        remoteDataSource: di.getInstance<CurrentWeatherRemoteDataSource>(),
       ),
       DiType.SINGLETON,
     );
