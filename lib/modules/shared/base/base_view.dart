@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/core/utils/error_handling/error_handling.dart';
 import 'package:weather_app/modules/shared/base/base_state.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
@@ -19,13 +20,19 @@ abstract class BaseView<B extends StateStreamable<BaseState>, T extends Object>
       },
       builder: (context, state) {
         final bloc = context.read<B>();
+        logger.d(state);
 
         if (state is Initial) {
           return initial(context, bloc);
         } else if (state is Success) {
           return success(context, bloc, state.data);
         } else {
-          return const LoadingWidget();
+          return const Padding(
+            padding: EdgeInsets.all(
+              AppValues.paddingXLarge,
+            ),
+            child: LoadingWidget(),
+          );
         }
       },
     );
