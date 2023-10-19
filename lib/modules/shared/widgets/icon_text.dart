@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/core/constants/app_text_styles.dart';
 
 import 'package:weather_app/core/constants/app_values.dart';
 
@@ -10,22 +11,28 @@ class IconTextWidget extends StatelessWidget {
   }) : super(key: key);
 
   final Widget icon;
-  final Widget text;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(
-        bottom: AppValues.margin_4,
+      padding: const EdgeInsets.only(
+        bottom: AppValues.padding_4,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           icon,
           const SizedBox(
-            width: AppValues.space_4,
+            width: AppValues.space_6,
           ),
-          text,
+          Text(
+            text,
+            style: AppTextStyles.titleSmall,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          ),
         ],
       ),
     );
