@@ -58,7 +58,7 @@ class CurrentWeatherView extends BaseView<CurrentWeatherBloc, Weather> {
     CurrentWeatherBloc bloc,
     Weather data,
   ) {
-    return const SizedBox(
+    return SizedBox(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
