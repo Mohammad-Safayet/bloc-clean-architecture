@@ -15,22 +15,23 @@ class IconTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        icon,
-        const SizedBox(
-          width: AppValues.space_4,
-        ),
-        Flexible(
-          child: Text(
-            text,
-            style: AppTextStyles.titleSmall,
-            overflow: TextOverflow.ellipsis,
-            maxLines: 1,
+    return SizedBox(
+      child: Row(
+        children: [
+          icon,
+          const SizedBox(
+            width: AppValues.space_4,
           ),
-        ),
-      ],
+          Flexible(
+            child: Text(
+              text,
+              style: AppTextStyles.titleSmall,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
