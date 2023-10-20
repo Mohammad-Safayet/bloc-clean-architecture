@@ -149,4 +149,9 @@ abstract class AppValues {
   // Unicode symbol
   static const celsius = "\u2103";
   static const fahrenheit = "\u2109";
+
+  // Divider
+  static const dividerThickness_2 = 2;
+  static const dividerIndent_5 = 5;
+  static const dividerIndent_10 = 10;
 }
