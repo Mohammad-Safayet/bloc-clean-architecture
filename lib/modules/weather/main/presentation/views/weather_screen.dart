@@ -51,9 +51,6 @@ class WeatherScreenView extends BaseView<ConnectivityBloc, bool> {
       margin: const EdgeInsets.only(
         top: AppValues.margin_12,
       ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppValues.paddingLarge,
-      ),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         borderRadius: const BorderRadius.only(
