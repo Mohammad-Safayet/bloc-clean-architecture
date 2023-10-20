@@ -65,10 +65,17 @@ class WeatherScreenView extends BaseView<ConnectivityBloc, bool> {
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             // Current Weather info
             CurrentWeatherView(
               position: position,
+            ),
+            Divider(
+              color: Theme.of(context).colorScheme.surfaceVariant,
+              thickness: AppValues.dividerThickness_2,
+              endIndent: AppValues.dividerIndent_5,
+              indent: AppValues.dividerIndent_5,
             ),
 
             // Astronomy information
