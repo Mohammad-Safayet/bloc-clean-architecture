@@ -51,6 +51,7 @@ class AstronomyView extends BaseView<AstronomyBloc, Astronomy> {
     return Container(
       padding: const EdgeInsets.symmetric(
         vertical: AppValues.padding,
+        horizontal: AppValues.paddingLarge,
       ),
       child: AstronomyInfoView(
         astronomy: data,
