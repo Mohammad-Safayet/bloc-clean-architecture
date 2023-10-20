@@ -5,6 +5,8 @@ import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 import 'package:weather_app/modules/shared/widgets/icon_text.dart';
+import 'package:weather_app/modules/weather/current_weather/presentation/widgets/weather_screen_bar_item.dart';
+import 'package:weather_app/modules/weather/current_weather/presentation/widgets/weather_screen_bar_item.dart';
 
 class WeatherScreenBarWidget extends StatelessWidget with BaseWidgetMixin {
   WeatherScreenBarWidget({
@@ -20,36 +22,30 @@ class WeatherScreenBarWidget extends StatelessWidget with BaseWidgetMixin {
 
   @override
   Widget body(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.only(
         bottom: AppValues.paddingSmall,
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            flex: 3,
-            child: IconTextWidget(
-              icon: FaIcon(
-                (isDay) ? FontAwesomeIcons.sun : FontAwesomeIcons.moon,
-                size: AppValues.icon_12,
-              ),
-              text: locationContinent,
+          WeatherScreenBarItemWidget(
+            icon: FaIcon(
+              FontAwesomeIcons.mapPin,
+              size: AppValues.icon_12,
             ),
+            text: locationCity,
+            mainAxisAlignment: MainAxisAlignment.start,
           ),
           const SizedBox(
-            width: AppValues.space_10,
+            width: AppValues.space_6,
           ),
-          Expanded(
-            flex: 2,
-            child: IconTextWidget(
-              icon: const FaIcon(
-                FontAwesomeIcons.mapPin,
-                size: AppValues.icon_12,
-              ),
-              text: locationCity,
+          WeatherScreenBarItemWidget(
+            icon: FaIcon(
+              (isDay) ? FontAwesomeIcons.sun : FontAwesomeIcons.moon,
+              size: AppValues.icon_12,
             ),
+            text: locationContinent,
+            mainAxisAlignment: MainAxisAlignment.end,
           ),
         ],
       ),
