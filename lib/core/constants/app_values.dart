@@ -151,7 +151,7 @@ abstract class AppValues {
   static const fahrenheit = "\u2109";
 
   // Divider
-  static const dividerThickness_2 = 2;
-  static const dividerIndent_5 = 5;
-  static const dividerIndent_10 = 10;
+  static const double dividerThickness_2 = 2;
+  static const double dividerIndent_5 = 5;
+  static const double dividerIndent_10 = 10;
 }
