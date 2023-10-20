@@ -36,6 +36,9 @@ abstract class AppValues {
   static const double container_40 = 40;
   static const double container_80 = 80;
   static const double container_100 = 100;
+  static const double container_220 = 220;
+  static const double container_180 = 180;
+  static const double container_300 = 300;
 
   // Spaces
   static const double space = 96;
