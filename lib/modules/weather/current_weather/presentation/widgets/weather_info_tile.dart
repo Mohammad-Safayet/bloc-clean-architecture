@@ -42,7 +42,7 @@ class WeatherInfoTileWidget extends StatelessWidget with BaseWidgetMixin {
                   alignment: Alignment.center,
                   child: Text(
                     value,
-                    style: AppTextStyles.displaySmall,
+                    style: AppTextStyles.displayXSmall,
                   ),
                 ),
                 if (unit != null)
