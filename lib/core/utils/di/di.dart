@@ -19,6 +19,10 @@ class DependencyInjection {
     T instance,
     DiType type,
   ) {
+    final isRegistered = getIt.isRegistered<T>();
+
+    if(isRegistered) return;
+
     switch (type) {
       case DiType.SINGLETON:
         getIt.registerSingleton(instance);
