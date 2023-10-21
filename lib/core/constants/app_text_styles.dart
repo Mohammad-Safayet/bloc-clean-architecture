@@ -23,6 +23,12 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.w400,
   );
 
+  static const displayXSmall = TextStyle(
+    fontSize: AppValues.fontSize_38,
+    letterSpacing: 0.15,
+    fontWeight: FontWeight.w400,
+  );
+
   static const title = TextStyle(
     fontSize: AppValues.fontSize_16,
     letterSpacing: 0.15,
