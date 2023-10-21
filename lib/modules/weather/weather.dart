@@ -10,6 +10,11 @@ import 'package:weather_app/modules/weather/astronomy/presentation/bloc/astronom
 import 'package:weather_app/modules/weather/current_weather/domain/repositories/current_weather_repository_impl.dart';
 import 'package:weather_app/modules/weather/current_weather/infra/datasources/current_weather_remote_datasource.dart';
 import 'package:weather_app/modules/weather/current_weather/presentation/bloc/current_weather_bloc.dart';
+import 'package:weather_app/modules/weather/forecast/domain/repositories/forecast_repository_impl.dart';
+import 'package:weather_app/modules/weather/forecast/domain/repositories/forecast_repository_impl.dart';
+import 'package:weather_app/modules/weather/forecast/infra/datasources/forecast_remote_datasource.dart';
+import 'package:weather_app/modules/weather/forecast/infra/datasources/forecast_remote_datasource.dart';
+import 'package:weather_app/modules/weather/forecast/infra/datasources/forecast_remote_datasource.dart';
 import 'package:weather_app/modules/weather/main/presentation/bloc/connectivity_bloc.dart';
 import 'package:weather_app/modules/weather/main/presentation/views/weather_screen.dart';
 
@@ -57,26 +62,38 @@ class WeatherPage extends BaseScreen {
 
     di.register<AstronomyRemoteDataSource>(
       AstronomyRemoteDataSource(),
-      DiType.SINGLETON,
+      DiType.LAZY_SINGLETON,
     );
 
     di.register<AstronomyRepositoryImpl>(
       AstronomyRepositoryImpl(
         remoteDataSource: di.getInstance<AstronomyRemoteDataSource>(),
       ),
-      DiType.SINGLETON,
+      DiType.LAZY_SINGLETON,
     );
 
     di.register<CurrentWeatherRemoteDataSource>(
       CurrentWeatherRemoteDataSource(),
-      DiType.SINGLETON,
+      DiType.LAZY_SINGLETON,
     );
 
     di.register<CurrentWeatherRepositoryImpl>(
       CurrentWeatherRepositoryImpl(
         remoteDataSource: di.getInstance<CurrentWeatherRemoteDataSource>(),
       ),
-      DiType.SINGLETON,
+      DiType.LAZY_SINGLETON,
+    );
+
+    di.register<ForecastRemoteDatasource>(
+      ForecastRemoteDatasource(),
+      DiType.LAZY_SINGLETON,
+    );
+
+    di.register<ForecastRepositoryImpl>(
+      ForecastRepositoryImpl(
+        remoteDataSource: di.getInstance<ForecastRemoteDatasource>(),
+      ),
+      DiType.LAZY_SINGLETON,
     );
   }
 }
