@@ -18,7 +18,7 @@ abstract class AppTextStyles {
   );
 
   static const displaySmall = TextStyle(
-    fontSize: AppValues.fontSize_64,
+    fontSize: AppValues.fontSize_56,
     letterSpacing: 0.15,
     fontWeight: FontWeight.w400,
   );
