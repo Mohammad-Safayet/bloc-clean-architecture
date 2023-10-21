@@ -15,6 +15,7 @@ import 'package:weather_app/modules/weather/forecast/domain/repositories/forecas
 import 'package:weather_app/modules/weather/forecast/infra/datasources/forecast_remote_datasource.dart';
 import 'package:weather_app/modules/weather/forecast/infra/datasources/forecast_remote_datasource.dart';
 import 'package:weather_app/modules/weather/forecast/infra/datasources/forecast_remote_datasource.dart';
+import 'package:weather_app/modules/weather/forecast/presentation/bloc/forecast_bloc.dart';
 import 'package:weather_app/modules/weather/main/presentation/bloc/connectivity_bloc.dart';
 import 'package:weather_app/modules/weather/main/presentation/views/weather_screen.dart';
 
@@ -48,6 +49,11 @@ class WeatherPage extends BaseScreen {
         BlocProvider(
           create: (context) => CurrentWeatherBloc(
             DependencyInjection.instance.getInstance<CurrentWeatherRepositoryImpl>(),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => ForecastBloc(
+            DependencyInjection.instance.getInstance<ForecastRepositoryImpl>(),
           ),
         ),
       ],
