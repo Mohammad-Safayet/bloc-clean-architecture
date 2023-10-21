@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
@@ -6,10 +7,11 @@ import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
   ForecastCardWidget({
     Key? key,
-    required this.day,
+    required this.date, required this.avgTemp,
   }) : super(key: key);
 
-  final String day;
+  final DateTime date;
+  final double avgTemp;
 
   @override
   Widget body(BuildContext context) {
@@ -28,8 +30,10 @@ class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
           Container(
             alignment: Alignment.centerRight,
             child: Text(
-              "78${AppValues.celsius}",
+              "$avgTemp${AppValues.celsius}",
               style: AppTextStyles.displaySmall,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
             ),
           ),
           Column(
@@ -44,7 +48,7 @@ class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  day,
+                  DateFormat().add_EEEE().format(date),
                   style: AppTextStyles.titleLight,
                 ),
               ),
