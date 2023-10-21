@@ -68,38 +68,38 @@ class WeatherPage extends BaseScreen {
 
     di.register<AstronomyRemoteDataSource>(
       AstronomyRemoteDataSource(),
-      DiType.LAZY_SINGLETON,
+      DiType.SINGLETON,
     );
 
     di.register<AstronomyRepositoryImpl>(
       AstronomyRepositoryImpl(
         remoteDataSource: di.getInstance<AstronomyRemoteDataSource>(),
       ),
-      DiType.LAZY_SINGLETON,
+      DiType.SINGLETON,
     );
 
     di.register<CurrentWeatherRemoteDataSource>(
       CurrentWeatherRemoteDataSource(),
-      DiType.LAZY_SINGLETON,
+      DiType.SINGLETON,
     );
 
     di.register<CurrentWeatherRepositoryImpl>(
       CurrentWeatherRepositoryImpl(
         remoteDataSource: di.getInstance<CurrentWeatherRemoteDataSource>(),
       ),
-      DiType.LAZY_SINGLETON,
+      DiType.SINGLETON,
     );
 
     di.register<ForecastRemoteDatasource>(
       ForecastRemoteDatasource(),
-      DiType.LAZY_SINGLETON,
+      DiType.SINGLETON,
     );
 
     di.register<ForecastRepositoryImpl>(
       ForecastRepositoryImpl(
         remoteDataSource: di.getInstance<ForecastRemoteDatasource>(),
       ),
-      DiType.LAZY_SINGLETON,
+      DiType.SINGLETON,
     );
   }
 }
