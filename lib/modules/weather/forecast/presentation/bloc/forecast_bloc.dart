@@ -24,6 +24,8 @@ class ForecastBloc extends Bloc<ForecastEvent, BaseState> {
     final getForecastDataUsecase = GetForecastDataUsecase(
       repository: repository,
     );
+    getForecastDataUsecase.q = event.query;
+    getForecastDataUsecase.days = event.days;
 
     final result = await getForecastDataUsecase.call();
 
