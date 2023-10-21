@@ -73,7 +73,8 @@ class WeatherScreenView extends BaseView<ConnectivityBloc, bool> {
               position: position,
             ),
             Divider(
-              color: Theme.of(context).colorScheme.surfaceVariant,
+              color:
+                  Theme.of(context).colorScheme.inverseSurface.withOpacity(0.2),
               thickness: AppValues.dividerThickness_2,
               endIndent: AppValues.dividerIndent_5,
               indent: AppValues.dividerIndent_5,
