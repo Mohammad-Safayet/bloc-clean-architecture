@@ -9,6 +9,7 @@ import 'package:weather_app/modules/shared/base/base_view.dart';
 import 'package:weather_app/modules/shared/widgets/loading.dart';
 import 'package:weather_app/modules/weather/astronomy/presentation/views/astronomy_view.dart';
 import 'package:weather_app/modules/weather/current_weather/presentation/views/current_weather.dart';
+import 'package:weather_app/modules/weather/forecast/presentation/views/forecast.dart';
 import 'package:weather_app/modules/weather/main/presentation/bloc/connectivity_bloc.dart';
 
 class WeatherScreenView extends BaseView<ConnectivityBloc, bool> {
@@ -80,6 +81,18 @@ class WeatherScreenView extends BaseView<ConnectivityBloc, bool> {
 
             // Astronomy information
             AstronomyView(
+              position: position,
+            ),
+            Divider(
+              color:
+                  Theme.of(context).colorScheme.inverseSurface.withOpacity(0.2),
+              thickness: AppValues.dividerThickness_2,
+              endIndent: AppValues.dividerIndent_5,
+              indent: AppValues.dividerIndent_5,
+            ),
+
+            // Forecasts
+            ForecastView(
               position: position,
             ),
           ],
