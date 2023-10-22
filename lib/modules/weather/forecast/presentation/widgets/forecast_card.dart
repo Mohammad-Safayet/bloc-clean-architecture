@@ -4,6 +4,7 @@ import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/core/extensions/datetime_extension.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
+import 'package:weather_app/modules/weather/forecast/presentation/widgets/forecast_card_header.dart';
 
 class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
   ForecastCardWidget({
@@ -28,33 +29,25 @@ class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-            alignment: Alignment.centerRight,
-            child: FittedBox(
-              fit: BoxFit.fitWidth,
-              child: Text(
-                "$avgTemp${AppValues.celsius}",
-                style: AppTextStyles.displaySmall,
-              ),
-            ),
-          ),
-          Column(
+          ForecastCardHeaderWidget(headerText: "$avgTemp${AppValues.celsius}"),
+          Row(
+
             children: [
-              Container(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "sunny",
-                  style: AppTextStyles.bodySmallBold,
-                ),
-              ),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  (date.isSameDate(DateTime.now()))
-                      ? "Today"
-                      : DateFormat().add_EEEE().format(date),
-                  style: AppTextStyles.titleLight,
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "sunny",
+                    style: AppTextStyles.bodySmallBold,
+                  ),
+                  Text(
+                    (date.isSameDate(DateTime.now()))
+                        ? "Today"
+                        : DateFormat().add_EEEE().format(date),
+                    style: AppTextStyles.titleLight,
+                  ),
+                ],
               ),
             ],
           ),
