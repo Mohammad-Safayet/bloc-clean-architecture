@@ -4,6 +4,7 @@ import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/core/extensions/datetime_extension.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
+import 'package:weather_app/modules/weather/forecast/presentation/widgets/forecast_card_details.dart';
 import 'package:weather_app/modules/weather/forecast/presentation/widgets/forecast_card_header.dart';
 
 class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
@@ -29,27 +30,12 @@ class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          ForecastCardHeaderWidget(headerText: "$avgTemp${AppValues.celsius}"),
-          Row(
-
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    "sunny",
-                    style: AppTextStyles.bodySmallBold,
-                  ),
-                  Text(
-                    (date.isSameDate(DateTime.now()))
-                        ? "Today"
-                        : DateFormat().add_EEEE().format(date),
-                    style: AppTextStyles.titleLight,
-                  ),
-                ],
-              ),
-            ],
+          ForecastCardHeaderWidget(
+            headerText: "$avgTemp${AppValues.celsius}",
+          ),
+          ForecastCardDetailsWidget(
+            conditionCaptions: "sunny",
+            date: date,
           ),
         ],
       ),
