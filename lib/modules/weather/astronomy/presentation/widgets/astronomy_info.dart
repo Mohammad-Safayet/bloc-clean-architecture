@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
+import 'package:weather_app/core/extensions/datetime_extension.dart';
+import 'package:weather_app/core/extensions/datetime_extension.dart';
+import 'package:weather_app/core/extensions/datetime_extension.dart';
+import 'package:weather_app/core/extensions/datetime_extension.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/entities/astro.dart';
 import 'package:weather_app/modules/weather/astronomy/domain/entities/astronomy.dart';
@@ -18,7 +22,10 @@ class AstronomyInfoView extends StatelessWidget with BaseWidgetMixin {
   @override
   Widget body(BuildContext context) {
     final Astro astro = astronomy.astro;
+    final now = DateTime.now();
 
+    logger.d(now);
+    logger.d(astro.moonSet);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,19 +54,27 @@ class AstronomyInfoView extends StatelessWidget with BaseWidgetMixin {
           children: [
             AstronomyCardWidget(
               imgLink: "assets/images/sunrise.png",
-              time: DateFormat.jmv().format(astro.sunRise),
+              time: (astro.sunRise.isSameTimeLoose(now))
+                  ? "--"
+                  : DateFormat.jmv().format(astro.sunRise),
             ),
             AstronomyCardWidget(
               imgLink: "assets/images/sunset.png",
-              time: DateFormat.jmv().format(astro.sunSet),
+              time: (astro.sunSet.isSameTimeLoose(now))
+                  ? "--"
+                  : DateFormat.jmv().format(astro.sunSet),
             ),
             AstronomyCardWidget(
               imgLink: "assets/images/moonrise.png",
-              time: DateFormat.jmv().format(astro.moonRise),
+              time: (astro.moonRise.isSameTimeLoose(now))
+                  ? "--"
+                  : DateFormat.jmv().format(astro.moonRise),
             ),
             AstronomyCardWidget(
               imgLink: "assets/images/moonset.png",
-              time: DateFormat.jmv().format(astro.moonSet),
+              time: (astro.moonSet.isSameTimeLoose(now))
+                  ? "--"
+                  : DateFormat.jmv().format(astro.moonSet),
             ),
           ],
         ),
