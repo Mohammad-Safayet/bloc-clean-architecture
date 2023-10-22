@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
+import 'package:weather_app/core/extensions/datetime_extension.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 
 class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
   ForecastCardWidget({
     Key? key,
-    required this.date, required this.avgTemp,
+    required this.date,
+    required this.avgTemp,
   }) : super(key: key);
 
   final DateTime date;
@@ -25,15 +27,16 @@ class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
         borderRadius: BorderRadius.circular(AppValues.radius),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
             alignment: Alignment.centerRight,
-            child: Text(
-              "$avgTemp${AppValues.celsius}",
-              style: AppTextStyles.displaySmall,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
+            child: FittedBox(
+              fit: BoxFit.fitWidth,
+              child: Text(
+                "$avgTemp${AppValues.celsius}",
+                style: AppTextStyles.displaySmall,
+              ),
             ),
           ),
           Column(
