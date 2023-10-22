@@ -46,7 +46,7 @@ class ForecastView extends BaseView<ForecastBloc, Forecast> {
         vertical: AppValues.padding,
         horizontal: AppValues.paddingLarge,
       ),
-      height: AppValues.container_300,
+      height: AppValues.container_250,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
