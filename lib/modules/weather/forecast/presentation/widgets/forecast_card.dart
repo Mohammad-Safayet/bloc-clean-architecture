@@ -18,8 +18,7 @@ class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
   @override
   Widget body(BuildContext context) {
     return Container(
-      height: AppValues.container_220,
-      width: AppValues.container_180,
+      width: AppValues.container_220,
       padding: const EdgeInsets.all(AppValues.paddingSmall),
       margin: const EdgeInsets.all(AppValues.marginSmall),
       decoration: BoxDecoration(
