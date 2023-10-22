@@ -50,7 +50,9 @@ class ForecastCardWidget extends StatelessWidget with BaseWidgetMixin {
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  DateFormat().add_EEEE().format(date),
+                  (date.isSameDate(DateTime.now()))
+                      ? "Today"
+                      : DateFormat().add_EEEE().format(date),
                   style: AppTextStyles.titleLight,
                 ),
               ),
