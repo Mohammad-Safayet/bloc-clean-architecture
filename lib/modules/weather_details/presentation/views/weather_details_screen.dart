@@ -4,6 +4,10 @@ import 'package:weather_app/modules/shared/base/base_screen.dart';
 import 'package:weather_app/modules/shared/widgets/divider.dart';
 import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_appbar.dart';
 import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_header.dart';
+import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_info.dart';
+import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_info_tile.dart';
+import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_info_tile.dart';
+import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_info_tile.dart';
 import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_temp.dart';
 
 class WeatherDetailScreen extends BaseScreen {
@@ -47,10 +51,11 @@ class WeatherDetailScreen extends BaseScreen {
 
             // temperature
             WeatherDetailsTempWidget(
-              temp: "17.5${AppValues.fahrenheit}",
+              temp: "17.5${AppValues.celsius}",
             ),
 
             // weather details
+            WeatherDetailsInfoWidget(),
           ],
         ),
       ),
