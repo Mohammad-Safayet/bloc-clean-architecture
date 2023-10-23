@@ -154,6 +154,14 @@ abstract class AppValues {
   static const celsius = "\u2103";
   static const fahrenheit = "\u2109";
 
+  // Weather Unit
+  static const mph = "mph";
+  static const kph = "kph";
+  static const percentage = "%";
+  static const mm = "mm";
+  static const mb = "mb";
+  static const inch = "inch";
+
   // Divider
   static const double dividerThickness = .5;
   static const double dividerThickness_1 = 1;
