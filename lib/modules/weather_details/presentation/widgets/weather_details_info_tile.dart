@@ -23,7 +23,7 @@ class WeatherDetailsInfoTileWidget extends StatelessWidget
     return Container(
       color: Theme.of(context).colorScheme.surface,
       padding: const EdgeInsets.all(
-        AppValues.paddingLarge,
+        AppValues.padding,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -39,15 +39,12 @@ class WeatherDetailsInfoTileWidget extends StatelessWidget
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              textBaseline: TextBaseline.ideographic,
               children: [
-                Flexible(
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Text(
-                      value,
-                      style: AppTextStyles.displaySmall,
-                    ),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    value,
+                    style: AppTextStyles.display,
                   ),
                 ),
                 Text(
