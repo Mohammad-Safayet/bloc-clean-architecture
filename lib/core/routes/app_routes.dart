@@ -9,7 +9,7 @@ abstract class Routes {
 
 abstract class _Path {
   static const HOME = "/home";
-  static const WEATHER_DETAILS = "/current-weather_details";
+  static const WEATHER_DETAILS = "/current_weather_details";
   static const SETTINGS = "/settings";
   static const ERROR = "/error";
 }
