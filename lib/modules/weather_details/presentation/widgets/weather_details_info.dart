@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/core/constants/app_strings.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_info_tile.dart';
@@ -33,9 +34,9 @@ class WeatherDetailsInfoWidget extends StatelessWidget with BaseWidgetMixin {
         children: [
           WeatherDetailsInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
-            title: "Humidity",
+            title: WeatherFieldConstants.fahrenheit,
             value: "70",
-            unit: "%",
+            unit: AppValues.fahrenheit,
           ),
           WeatherDetailsInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
@@ -44,53 +45,83 @@ class WeatherDetailsInfoWidget extends StatelessWidget with BaseWidgetMixin {
           ),
           WeatherDetailsInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
-            title: "Wind",
+            title: WeatherFieldConstants.feelsLike,
             value: "70",
-            unit: "kph",
+            unit: AppValues.celsius,
           ),
           WeatherDetailsInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
-            title: "UV Index",
+            title: WeatherFieldConstants.feelsLike,
             value: "70",
+            unit: AppValues.fahrenheit,
           ),
           WeatherDetailsInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
-            title: "Wind",
+            title: WeatherFieldConstants.wind,
             value: "70",
-            unit: "kph",
+            unit: AppValues.mph,
           ),
           WeatherDetailsInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
-            title: "UV Index",
+            title: WeatherFieldConstants.wind,
             value: "70",
+            unit: AppValues.kph,
           ),
           WeatherDetailsInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
-            title: "Wind",
-            value: "70",
-            unit: "kph",
-          ),
-          WeatherDetailsInfoTileWidget(
-            bgColor: Theme.of(context).colorScheme.surface,
-            title: "UV Index",
+            title: WeatherFieldConstants.windDegree,
             value: "70",
           ),
           WeatherDetailsInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
-            title: "Wind",
-            value: "70",
-            unit: "kph",
-          ),
-          WeatherDetailsInfoTileWidget(
-            bgColor: Theme.of(context).colorScheme.surface,
-            title: "UV Index",
+            title: WeatherFieldConstants.windDir,
             value: "70",
           ),
           WeatherDetailsInfoTileWidget(
             bgColor: Theme.of(context).colorScheme.surface,
-            title: "Wind",
+            title: WeatherFieldConstants.pressure,
             value: "70",
-            unit: "kph",
+            unit: AppValues.mb,
+          ),
+          WeatherDetailsInfoTileWidget(
+            bgColor: Theme.of(context).colorScheme.surface,
+            title: WeatherFieldConstants.pressure,
+            value: "70",
+            unit: AppValues.inch,
+          ),
+          WeatherDetailsInfoTileWidget(
+            bgColor: Theme.of(context).colorScheme.surface,
+            title: WeatherFieldConstants.precipitation,
+            value: "70",
+            unit: AppValues.mm,
+          ),
+          WeatherDetailsInfoTileWidget(
+            bgColor: Theme.of(context).colorScheme.surface,
+            title: WeatherFieldConstants.precipitation,
+            value: "70",
+            unit: AppValues.inch,
+          ),
+          WeatherDetailsInfoTileWidget(
+            bgColor: Theme.of(context).colorScheme.surface,
+            title: WeatherFieldConstants.humidity,
+            value: "70",
+            unit: AppValues.percentage,
+          ),
+          WeatherDetailsInfoTileWidget(
+            bgColor: Theme.of(context).colorScheme.surface,
+            title: WeatherFieldConstants.clouds,
+            value: "70",
+            unit: AppValues.percentage,
+          ),WeatherDetailsInfoTileWidget(
+            bgColor: Theme.of(context).colorScheme.surface,
+            title: WeatherFieldConstants.gust,
+            value: "70",
+            unit: AppValues.mph,
+          ), WeatherDetailsInfoTileWidget(
+            bgColor: Theme.of(context).colorScheme.surface,
+            title: WeatherFieldConstants.gust,
+            value: "70",
+            unit: AppValues.kph,
           ),
         ],
       ),
