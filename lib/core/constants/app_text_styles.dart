@@ -17,6 +17,12 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.w600,
   );
 
+  static const display = TextStyle(
+    fontSize: AppValues.fontSize_64,
+    letterSpacing: 0.15,
+    fontWeight: FontWeight.w600,
+  );
+
   static const displaySmall = TextStyle(
     fontSize: AppValues.fontSize_56,
     letterSpacing: 0.15,
