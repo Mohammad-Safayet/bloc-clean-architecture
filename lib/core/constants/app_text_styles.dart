@@ -35,6 +35,12 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.w400,
   );
 
+  static const titleBold = TextStyle(
+    fontSize: AppValues.fontSize_16,
+    letterSpacing: 0.5,
+    fontWeight: FontWeight.w700,
+  );
+
   static const titleLarge = TextStyle(
     fontSize: AppValues.fontSize_20,
     letterSpacing: 0.5,
