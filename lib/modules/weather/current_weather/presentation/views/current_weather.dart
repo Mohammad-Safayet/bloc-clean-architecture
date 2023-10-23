@@ -86,7 +86,9 @@ class CurrentWeatherView extends BaseView<CurrentWeatherBloc, Weather> {
           ),
 
           // View more Button
-          ViewDetailsButtonWidget(),
+          ViewDetailsButtonWidget(
+            weather: data,
+          ),
         ],
       ),
     );
