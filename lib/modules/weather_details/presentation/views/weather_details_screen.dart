@@ -33,7 +33,24 @@ class WeatherDetailScreen extends BaseScreen {
           ),
         ),
       ),
-      child: Container(),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            // location details
+            WeatherDetailsHeaderWidget(
+              city: "Dhaka",
+              country: "Bangladesh",
+            ),
+            DividerWidget(),
+
+            // temperature
+
+            // weather details
+          ],
+        ),
+      ),
     );
   }
 }
