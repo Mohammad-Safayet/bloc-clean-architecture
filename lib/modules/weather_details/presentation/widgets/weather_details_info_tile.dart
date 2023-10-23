@@ -22,8 +22,8 @@ class WeatherDetailsInfoTileWidget extends StatelessWidget
   Widget body(BuildContext context) {
     return Container(
       color: Theme.of(context).colorScheme.surface,
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppValues.paddingXLarge,
+      padding: const EdgeInsets.all(
+        AppValues.paddingLarge,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -36,15 +36,19 @@ class WeatherDetailsInfoTileWidget extends StatelessWidget
               style: AppTextStyles.titleBold,
             ),
           ),
-          SizedBox(
+          Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.ideographic,
               children: [
-                Text(
-                  value,
-                  style: AppTextStyles.displaySmall,
+                Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(
+                      value,
+                      style: AppTextStyles.displaySmall,
+                    ),
+                  ),
                 ),
                 Text(
                   unit,
