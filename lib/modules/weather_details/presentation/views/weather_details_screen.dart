@@ -46,6 +46,9 @@ class WeatherDetailScreen extends BaseScreen {
             DividerWidget(),
 
             // temperature
+            WeatherDetailsTempWidget(
+              temp: "17.5${AppValues.fahrenheit}",
+            ),
 
             // weather details
           ],
