@@ -40,11 +40,13 @@ class WeatherDetailsInfoTileWidget extends StatelessWidget
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    value,
-                    style: AppTextStyles.display,
+                Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      value,
+                      style: AppTextStyles.display,
+                    ),
                   ),
                 ),
                 Text(
