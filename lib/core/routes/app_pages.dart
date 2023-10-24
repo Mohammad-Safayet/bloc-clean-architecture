@@ -10,6 +10,7 @@ import 'package:weather_app/modules/home/presentation/bloc/location_bloc.dart';
 import 'package:weather_app/modules/shared/views/error_screen.dart';
 import 'package:weather_app/modules/weather/current_weather/domain/entities/weather.dart';
 import 'package:weather_app/modules/weather_details/presentation/views/weather_details_screen.dart';
+import 'package:weather_app/modules/weather_details/weather_details.dart';
 
 part 'app_routes.dart';
 
@@ -54,7 +55,8 @@ abstract class AppPages {
         path: Routes.WEATHER_DETAILS,
         builder: (context, state) {
           final data = state.extra as Weather;
-          return WeatherDetailScreen(
+
+          return WeatherDetailsPage(
             weather: data,
           );
         },
