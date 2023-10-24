@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
-import 'package:weather_app/modules/shared/widgets/icon_text.dart';
-import 'package:weather_app/modules/weather/current_weather/presentation/widgets/weather_screen_bar_item.dart';
 import 'package:weather_app/modules/weather/current_weather/presentation/widgets/weather_screen_bar_item.dart';
 
 class WeatherScreenBarWidget extends StatelessWidget with BaseWidgetMixin {
@@ -29,7 +26,7 @@ class WeatherScreenBarWidget extends StatelessWidget with BaseWidgetMixin {
       child: Row(
         children: [
           WeatherScreenBarItemWidget(
-            icon: FaIcon(
+            icon: const FaIcon(
               FontAwesomeIcons.mapPin,
               size: AppValues.icon_12,
             ),

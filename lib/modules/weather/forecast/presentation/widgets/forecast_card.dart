@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:weather_app/core/constants/app_text_styles.dart';
 import 'package:weather_app/core/constants/app_values.dart';
-import 'package:weather_app/core/extensions/datetime_extension.dart';
 import 'package:weather_app/modules/shared/mixin/base_widget.dart';
 import 'package:weather_app/modules/weather/forecast/presentation/widgets/forecast_card_details.dart';
 import 'package:weather_app/modules/weather/forecast/presentation/widgets/forecast_card_header.dart';

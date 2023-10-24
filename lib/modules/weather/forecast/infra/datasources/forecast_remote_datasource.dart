@@ -1,7 +1,6 @@
 import 'package:weather_app/core/extensions/entities/forecast_query_param_extension.dart';
 import 'package:weather_app/modules/shared/base/base_remote_datasource.dart';
 import 'package:weather_app/modules/weather/forecast/domain/entities/forecast_query_param.dart';
-import 'package:weather_app/modules/weather/forecast/domain/entities/forecast_query_param.dart';
 import 'package:weather_app/modules/weather/forecast/infra/models/forecast_model.dart';
 import 'package:weather_app/modules/weather/main/infra/datasources/weather_remote_datasource.dart';
 
