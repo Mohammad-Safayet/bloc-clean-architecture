@@ -2,15 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/shared/base/base_screen.dart';
 import 'package:weather_app/modules/shared/widgets/divider.dart';
+import 'package:weather_app/modules/weather/current_weather/domain/entities/weather.dart';
 import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_appbar.dart';
 import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_header.dart';
 import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_info.dart';
-import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_info_tile.dart';
-import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_info_tile.dart';
-import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_info_tile.dart';
 import 'package:weather_app/modules/weather_details/presentation/widgets/weather_details_temp.dart';
 
 class WeatherDetailScreen extends BaseScreen {
+  final Weather weather;
+
+  WeatherDetailScreen({
+    super.key,
+    required this.weather,
+  });
+
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return const WeatherDetailsAppBarWidget(
@@ -55,7 +60,9 @@ class WeatherDetailScreen extends BaseScreen {
             ),
 
             // weather details
-            WeatherDetailsInfoWidget(),
+            WeatherDetailsInfoWidget(
+              weather: weather.current,
+            ),
           ],
         ),
       ),
