@@ -29,16 +29,19 @@ class WeatherDetailScreen extends BaseScreen {
       width: double.infinity,
       height: double.infinity,
       margin: const EdgeInsets.only(
-        top: AppValues.margin,
+        top: AppValues.margin_12,
+      ),
+      padding: const EdgeInsets.only(
+        top: AppValues.padding,
       ),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(
-            AppValues.radiusXLarge,
+            AppValues.radiusLarge,
           ),
           topRight: Radius.circular(
-            AppValues.radiusXLarge,
+            AppValues.radiusLarge,
           ),
         ),
       ),
