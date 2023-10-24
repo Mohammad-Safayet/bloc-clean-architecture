@@ -52,14 +52,14 @@ class WeatherDetailScreen extends BaseScreen {
           children: [
             // location details
             WeatherDetailsHeaderWidget(
-              city: "Dhaka",
-              country: "Bangladesh",
+              city: weather.location.name,
+              country: weather.location.tzId,
             ),
             DividerWidget(),
 
             // temperature
             WeatherDetailsTempWidget(
-              temp: "17.5${AppValues.celsius}",
+              temp: "${weather.current.tempC}${AppValues.celsius}",
             ),
 
             // weather details
