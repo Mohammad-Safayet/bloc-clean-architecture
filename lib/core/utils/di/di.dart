@@ -1,3 +1,7 @@
+/// Author: Safayet Latif
+/// Date: October 25, 2023
+/// Description: This Dart class, DependencyInjection, provides a simple dependency injection framework using the GetIt package. It allows for registration and retrieval of objects using different dependency injection strategies.
+
 import 'package:get_it/get_it.dart';
 
 enum DiType {
@@ -16,12 +20,12 @@ class DependencyInjection {
   DependencyInjection._internal();
 
   void register<T extends Object>(
-    T instance,
-    DiType type,
-  ) {
+      T instance,
+      DiType type,
+      ) {
     final isRegistered = getIt.isRegistered<T>();
 
-    if(isRegistered) return;
+    if (isRegistered) return;
 
     switch (type) {
       case DiType.SINGLETON:
