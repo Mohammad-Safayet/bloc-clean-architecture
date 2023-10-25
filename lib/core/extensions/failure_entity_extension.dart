@@ -1,6 +1,7 @@
-/// Author: Mohammad Safayet Latif
+/// Author: Safayet Latif
 /// Date: October 25, 2023
 /// Description: This Dart extension provides methods for mapping exceptions to failure entities.
+
 import 'package:weather_app/core/utils/error_handling/error_handling.dart';
 
 /// A set of extension methods for converting exceptions to corresponding failure entities.

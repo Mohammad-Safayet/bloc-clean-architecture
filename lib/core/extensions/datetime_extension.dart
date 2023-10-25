@@ -1,4 +1,4 @@
-/// Author: Mohammad Safayet Latif
+/// Author: Safayet Latif
 /// Date: October 25, 2023
 /// Description: This Dart extension provides methods for working with DateTime objects.
 ///

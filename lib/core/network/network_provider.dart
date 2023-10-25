@@ -1,6 +1,7 @@
-/// Author: Your Name
+/// Author:  Safayet Latif
 /// Date: October 25, 2023
 /// Description: This Dart class provides network-related functionality using the Dio library, handles authentication tokens, and content type configuration.
+
 import 'package:dio/dio.dart';
 import 'package:weather_app/core/config/build_config.dart';
 import 'package:weather_app/core/network/network_request_header.dart';

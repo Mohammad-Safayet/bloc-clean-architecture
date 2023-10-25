@@ -1,3 +1,7 @@
+/// Author: Safayet Latif
+/// Date: October 25, 2023
+/// Description: This Dart module contains functions for handling network errors, particularly Dio exceptions, and mapping them to custom exceptions.
+
 import 'dart:io';
 
 import 'package:dio/dio.dart';

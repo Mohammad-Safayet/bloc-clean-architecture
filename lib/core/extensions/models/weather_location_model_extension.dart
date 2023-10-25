@@ -1,6 +1,7 @@
-/// Author: Mohammad Safayet Latif
+/// Author: Safayet Latif
 /// Date: October 25, 2023
 /// Description: This Dart extension provides a method for converting a WeatherLocationModel to a WeatherLocation entity.
+
 import 'package:intl/intl.dart';
 import 'package:weather_app/core/constants/app_values.dart';
 import 'package:weather_app/modules/weather/main/domain/entities/weather_location.dart';
