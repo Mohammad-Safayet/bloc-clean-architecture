@@ -1,3 +1,7 @@
+/// Author: Safayet Latif
+/// Date: October 25, 2023
+/// Description: This Dart module defines the routing and navigation configuration for the Weather App using the GoRouter package.
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
