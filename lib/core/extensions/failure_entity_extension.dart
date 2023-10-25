@@ -1,6 +1,17 @@
+/// Author: Mohammad Safayet Latif
+/// Date: October 25, 2023
+/// Description: This Dart extension provides methods for mapping exceptions to failure entities.
 import 'package:weather_app/core/utils/error_handling/error_handling.dart';
 
+/// A set of extension methods for converting exceptions to corresponding failure entities.
 extension FailureEntityExtension on FailureEntity {
+  /// Maps a [BaseException] to a [FailureEntity].
+  ///
+  /// This method takes a [BaseException] and maps it to a specific [FailureEntity]
+  /// based on the type of exception. If the exception is of a known type, it constructs
+  /// the appropriate failure entity with the necessary information.
+  ///
+  /// - [exception]: The exception to be mapped to a [FailureEntity].
   static FailureEntity mapToFailureEntity({
     required BaseException exception,
   }) {
