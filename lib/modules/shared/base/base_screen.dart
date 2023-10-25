@@ -1,8 +1,13 @@
+/// Author: Safayet Latif
+/// Date: October 25, 2023
+/// Description: This abstract class, `BaseScreen`, serves as the foundation for building screens in the Weather App. It provides a consistent structure for defining screen elements such as the app bar, body content, and user interface settings like status bar and background colors.
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:logger/logger.dart';
 import 'package:weather_app/core/config/config.dart';
 
+/// An abstract class representing the base screen for the Weather App.
 abstract class BaseScreen extends StatelessWidget {
   BaseScreen({
     Key? key,
@@ -19,14 +24,16 @@ abstract class BaseScreen extends StatelessWidget {
     );
   }
 
+  /// Returns the app bar for the screen.
   PreferredSizeWidget? appBar(BuildContext context);
 
+  /// Returns the body content for the screen.
   Widget body(BuildContext context);
 
   Widget _annotatedRegion(BuildContext context) {
     return AnnotatedRegion(
       value: SystemUiOverlayStyle(
-        //Status bar color for android
+        // Status bar color for Android
         statusBarColor: statusBarColor(context),
         statusBarIconBrightness: Brightness.dark,
       ),
@@ -56,26 +63,32 @@ abstract class BaseScreen extends StatelessWidget {
     );
   }
 
+  /// Returns the background color of the screen.
   Color pageBackgroundColor(BuildContext context) {
     return Theme.of(context).colorScheme.surfaceVariant;
   }
 
+  /// Returns the floating action button for the screen.
   Widget? floatingActionButton(BuildContext context) {
     return null;
   }
 
+  /// Returns the bottom navigation bar for the screen.
   Widget? bottomNavigationBar() {
     return null;
   }
 
+  /// Returns the drawer for the screen.
   Widget? drawer() {
     return null;
   }
 
+  /// Returns the bottom sheet for the screen.
   Widget? bottomSheet() {
     return null;
   }
 
+  /// Returns the status bar color for the screen.
   Color statusBarColor(BuildContext context) {
     return Theme.of(context).colorScheme.onPrimary;
   }
