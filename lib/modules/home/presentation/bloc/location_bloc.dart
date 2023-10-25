@@ -1,3 +1,7 @@
+/// Author: Safayet Latif
+/// Date: October 25, 2023
+/// Description: This Dart file defines a BLoC (Business Logic Component) for managing location-related events and state changes. It interacts with a LocationManager to retrieve the current location and handle location permissions.
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:weather_app/core/config/build_config.dart';
