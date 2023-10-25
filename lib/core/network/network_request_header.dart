@@ -1,3 +1,7 @@
+/// Author: Your Name
+/// Date: October 25, 2023
+/// Description: This Dart class is an interceptor for Dio requests that adds custom headers to each request.
+
 import 'package:dio/dio.dart';
 
 class RequestHeaderInterceptor extends InterceptorsWrapper {
