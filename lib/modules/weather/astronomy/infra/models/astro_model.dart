@@ -15,7 +15,7 @@ class AstroModel {
   @JsonKey(name: "moon_phase")
   final String moonPhase;
   @JsonKey(name: "moon_illumination")
-  final String moonIllumination;
+  final int moonIllumination;
   @JsonKey(name: "is_moon_up")
   final int isMoonUp;
   @JsonKey(name: "is_sun_up")

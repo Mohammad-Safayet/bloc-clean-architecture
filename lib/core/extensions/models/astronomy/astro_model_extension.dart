@@ -19,7 +19,7 @@ extension AstroModelExtension on AstroModel {
           ? DateTime.now()
           : DateFormat.jm().parseLoose(moonSet),
       moonPhase: moonPhase,
-      moonIllumination: int.parse(moonIllumination),
+      moonIllumination: moonIllumination,
       isMoonUp: isMoonUp == 1,
       isSunUp: isSunUp == 1,
     );

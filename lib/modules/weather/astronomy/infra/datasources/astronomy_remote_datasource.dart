@@ -20,6 +20,7 @@ class AstronomyRemoteDataSource extends BaseRemoteDataSource
     try {
       final response = await callApiWithErrorParser(api);
       final data = response.data;
+      logger.d(data);
 
       return AstronomyModel.fromJson(data);
     } catch (e) {
