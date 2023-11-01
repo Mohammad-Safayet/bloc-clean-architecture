@@ -29,8 +29,9 @@ class WeatherPage extends BaseScreen {
 
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
-    return const WeatherAppBarWidget(
+    return WeatherAppBarWidget(
       appTitle: "lak",
+      position: position,
     );
   }
 

@@ -16,7 +16,7 @@ class AppBarIconButtonWidget extends StatelessWidget with BaseWidgetMixin {
   @override
   Widget? body(BuildContext context) {
     return IconButton(
-      onPressed: () => onPressed,
+      onPressed: () => onPressed(),
       icon: FaIcon(
         icon,
         color: Theme.of(context).colorScheme.onSurfaceVariant,
