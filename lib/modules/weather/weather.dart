@@ -15,6 +15,7 @@ import 'package:weather_app/modules/weather/forecast/infra/datasources/forecast_
 import 'package:weather_app/modules/weather/forecast/presentation/bloc/forecast_bloc.dart';
 import 'package:weather_app/modules/weather/main/presentation/bloc/connectivity_bloc.dart';
 import 'package:weather_app/modules/weather/main/presentation/views/weather_screen.dart';
+import 'package:weather_app/modules/weather/main/presentation/widgets/weather_app_bar.dart';
 
 class WeatherPage extends BaseScreen {
   final Position position;
@@ -28,7 +29,9 @@ class WeatherPage extends BaseScreen {
 
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
-    return null;
+    return const WeatherAppBarWidget(
+      appTitle: "lak",
+    );
   }
 
   @override
