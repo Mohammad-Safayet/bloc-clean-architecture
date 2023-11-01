@@ -10,9 +10,7 @@ class HomePage extends BaseScreen {
 
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
-    return const WeatherAppBarWidget(
-      appTitle: "lak",
-    );
+    return null;
   }
 
   @override
